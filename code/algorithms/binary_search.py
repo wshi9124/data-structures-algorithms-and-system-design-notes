@@ -31,9 +31,12 @@ verify(result)
 result= binary_search(numbers, 6)
 verify(result)
 
-
-"""List has to be sorted"""
-"""Logarithmic runtime O(log n) or O(ln n) """
+"""
+List has to be sorted
+Logarithmic runtime O(log n) or O(ln n) 
+Iterative solution- generally means that the solution is implemented using a loop structure
+Space complexity of the iterative binary search is constant O(1)
+"""
 
 
 
