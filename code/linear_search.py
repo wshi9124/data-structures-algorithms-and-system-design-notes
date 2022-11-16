@@ -1,9 +1,7 @@
 def linear_search(list, target):
-    """
-    returns the index position of the target if found, else returns None  
-    """
-    """
-    len(list) constant time operation
+    """ 
+    returns the index position of the target if found, else returns None 
+    len(list) constant time operation n(1)
     """
     for i in range(0, len(list)):
         if list[i] == target:
@@ -24,4 +22,4 @@ verify(result)
 result= linear_search(numbers, 6)
 verify(result)
 
-"""Linear Time runtime"""
+"""Linear Time runtime O(n)"""
