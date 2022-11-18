@@ -22,3 +22,12 @@ O(n^3)- cubic runtime
 O(n^k)- polynomial runtime, considered efficient and likely used in practice (All big O above is polynomial)
 O(2^n)- exponential time (ex: brute force method)
 O(n!)- factorial time complexity (ex: traveling salesman problem 3!= 3*2*1)
+
+Recursive Function- function that calls on itself (see recursive_binary_search.py)
+Always need a stopping condition or base case
+Recursive Depth- number of times a recursive function calls on itself
+
+Iterative Function-  function that loops to repeat some part of the code
+
+*Python preferes iterative functions over recursive functions becasue of space complexity*
+*However, that is not the case for some other languages such as Swift*
