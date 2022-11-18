@@ -13,8 +13,12 @@ Big O- Theoretical definition of the complexity of an algorithm as a function of
 It measures the "upper bounds" or worst case senario of the algorithm 
 
 Runtime from best to worst
-O(1)- constant time (least complex best case senario)
+O(1)- constant time, time does not change with the size of the input. (least complex best case senario)
 O(log n) or O(ln n)- logarithmic runtime/ sublinear runtime (ex: binary search)
 O(n)- linear runtime (ex: linear search)
 O(n log n)- quasilinear runtime (ex: merge sort) 
 O(n^2)- qaudratic runtime, not every efficient (ex: nested iteration(loop inside a loop))
+O(n^3)- cubic runtime
+O(n^k)- polynomial runtime, considered efficient and likely used in practice (All big O above is polynomial)
+O(2^n)- exponential time (ex: brute force method)
+O(n!)- factorial time complexity (ex: traveling salesman problem 3!= 3*2*1)
