@@ -16,11 +16,22 @@ Non Contiguous data structute- structure that stores a value along with a refere
 Homogeneous data structure– Data elements will be of same data type
 Heterogenous data structure- Data elements may not be of same data type 
 
+Self Referential Object- structures that have one or more pointers which point to the same type of structure, as their member.
 
 Types of data structure:
 
-1) array- Contiguous data structure with no gaps 
-Uses index to access values 
+1) Array- Contiguous data structure with no gaps 
+In python the values are not stored in memory, instead the array only stores the references to the values 
+Uses index to access, insert, update and delete values 
 *called list in python array is sometihng else in python*
-*lists are homogeneous*
+*lists in python are heterogenous*
 
+2) Linked List- linear data structure where each element in the list is contained in a separate object called a node
+Node- models 2 pieces of information, an individual item of the data we want to store and a reference to the next node in the list 
+The first node of a linked list is the head and the last node is the tail
+list only makes a reference to the head although in some implementations they also keep reference to the tail as well
+Self Referencial Object- definition of node is includes the node itself
+Better at inserting and deleting than arrays 
+2 Types of Linked List
+1) Singly Linked List- each node stores a reference to the next node in the list  
+2) Doubly Linked List- each node stores a reference to both the node before and after the list
