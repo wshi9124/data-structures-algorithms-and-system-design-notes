@@ -1,6 +1,9 @@
 # Data-structures-and-algorithm-notes
 #####
-Notes folder contain general notes that is split between data structures and algorithms 
-#####
+The notes folder contain general notes that is split between data structures and algorithms . 
 It also includes images for reference
+#####
+The data_structures and algorithms folders contain individual examples as well as more specific notes on topics. 
+#####
+All the code in this repository uses Python
 
