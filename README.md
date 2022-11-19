@@ -5,5 +5,5 @@ It also includes images for reference
 #####
 The data_structures and algorithms folders contain individual examples as well as more specific notes on topics. 
 #####
-All the code in this repository uses Python
+All the code and examples in this repository is based on python
 
