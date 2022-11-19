@@ -14,3 +14,10 @@ Self Referencial Object- definition of node is includes the node itself
 1) Singly Linked List- each node stores a reference to the next node in the list  
 2) Doubly Linked List- each node stores a reference to both the node before and after the list
 """
+
+class Node:
+    data = None
+    next_node = None 
+
+    def __init__(self, data):
+        self.data = data
