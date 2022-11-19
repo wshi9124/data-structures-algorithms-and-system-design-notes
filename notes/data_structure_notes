@@ -1,0 +1,26 @@
+data structure- a way to store information while programming.
+It is a collection of values and the format they are stored in, the relationships between the values in the collection,
+as well as the operations applied on the data stored in the structure 
+
+Operations:
+1) Access and read values 
+2) Search for arbitrary values
+3) Insert values at any point in the structure 
+4) Delete values in the structure 
+
+Contiguous data structure- data stored in blocks of memory that are beside each other with no gaps
+(retrieving the values are easy)
+Non Contiguous data structute- structure that stores a value along with a reference to where the next value is 
+(increases runtime)
+
+Homogeneous data structure– Data elements will be of same data type
+Heterogenous data structure- Data elements may not be of same data type 
+
+
+Types of data structure:
+
+1) array- Contiguous data structure with no gaps 
+Uses index to access values 
+*called list in python array is sometihng else in python*
+*lists are homogeneous*
+
