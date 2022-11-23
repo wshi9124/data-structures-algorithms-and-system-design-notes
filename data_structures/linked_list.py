@@ -31,12 +31,12 @@ class Node:
         return "<Node data: %s>" %self.data 
 
 N1= Node(10)
-print(N1)
+print("N1", N1)
 N2= Node(20)
 N1.next_node = N2
-print(N1.next_node)
+print("N1.next", N1.next_node)
 
-class LinkedList:
+class LinkedList: 
     """
     Makes sure new list is alwasy empty
     Singly Linked List
@@ -50,9 +50,10 @@ class LinkedList:
     def size(self):
         """
         Returns the number of nodes in the list 
+        takes O(n) or linear time
         """
         current = self.head
-        count= 0
+        count = 0
         """
         same as while count != None:
         """
@@ -60,3 +61,59 @@ class LinkedList:
             count += 1
             current = current.next_node
 
+        return count
+
+    def add(self, data):
+        """ 
+        Three ways to add data to the list 
+        prepending, appending, inserting 
+        below is prepending (adding new node to head of the list)
+        constant time operation O(1)
+        """
+        new_node = Node(data)
+        new_node.next_node = self.head
+        self.head = new_node
+
+    def search(self, key):
+        """
+        Search for the first node containing data that matches the key
+        Returns the node or None if not found
+        Takes O(n) or linear time 
+        """
+        
+        current = self.head
+
+        while current:
+            if current.data == key:
+                return current
+            else:
+                current = current.next_node
+        return None 
+
+    def __repr__(self):
+        """
+        Return a string representation of the list 
+        Takes O(n) or linear time 
+        """
+        nodes = []
+        current = self.head
+
+        while current:
+            if current is self.head:
+                nodes.append("[Head: %s]" % current.data)
+            elif current.next_node is None:
+                nodes.append("[Tail: %s]" % current.data)
+            else:
+                nodes.append("[%s]" % current.data)
+            
+            current = current.next_node
+        return '-> '.join(nodes)
+
+l = LinkedList() 
+N3 = Node(10) 
+l.head = N3
+l.add(20)
+l.add(15)
+print("size of l", l.size())
+print("l", l)
+print("search for key", l.search(20))
