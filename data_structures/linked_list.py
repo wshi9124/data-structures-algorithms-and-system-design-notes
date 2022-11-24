@@ -89,6 +89,59 @@ class LinkedList:
             else:
                 current = current.next_node
         return None 
+    
+    def insert(self, data, index):
+        """
+        Inserts a new node containing data at index position
+        Constant time operation or O(1) but finding the node at the insertion point takes linear time or O(n)
+        Overall takes linear time
+        """
+        if index == 0:
+            self.add(data)
+
+        if index > 0:
+            new = Node(data)
+
+            position = index
+            current = self.head 
+        
+            while position > 1:
+                current = current.next_node
+                position -= 1
+            
+            prev_node = current
+            next_node = current.next_node  
+
+            prev_node.next_node = new
+            new.next_node = next_node
+
+    """
+    There are 2 ways to define remove method 
+    1) Provide a key to remove as an arguement 
+    2) Provide an index to remove 
+    """
+
+    def remove_by_key(self, key):
+        current = self.head
+        previous = None 
+        found = False
+
+        """
+        while current != None and found != False (so found = true)  
+        """  
+        while current and not found:
+            if current.data == key and current == self.head:
+                found = True
+                self.head = current.next_node
+            elif current.data == key:
+                found = True
+                previous.next_node = current.next_node  
+            else:
+                previous = current
+                current= current.next_node
+        
+        return current
+
 
     def __repr__(self):
         """
@@ -111,9 +164,12 @@ class LinkedList:
 
 l = LinkedList() 
 N3 = Node(10) 
-l.head = N3
+l.head = N3 
 l.add(20)
 l.add(15)
+l.add(30)
+l.insert(1500, 2)
+l.remove_by_key(30)
 print("size of l", l.size())
 print("l", l)
 print("search for key", l.search(20))
