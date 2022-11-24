@@ -3,6 +3,10 @@ Recursive algorithm that continuously splits the array in half until it cannot b
 If the array has multiple elements, split the array into halves and recursively invoke the merge sort on each of the halves.
 When both halves are sorted, the merge operation is applied. 
 Merge operation is the process of taking two smaller sorted arrays and combining them to eventually make a larger one.
+
+Overall merge sort takes O(n log n) or quasilinear time 
+It takes O(n) or linear space becasue the previously split lists are deleted from memory 
+so only last merge matters which depends on size of list or n 
 """
 
 def merge_sort(list):
@@ -15,7 +19,7 @@ def merge_sort(list):
     2) Conquer: Recursively sort the sublists created in previous step
     3) Combine: Merge sorted sublists created in previous step 
     """
-    
+     
     """
     First check for naively sorting- if we give merge sort functuon an 
     empty list or a list with one element it is technically already sorted
@@ -37,10 +41,14 @@ def split(list):
     """
     Divide the unsorted list at midpoint into sublists 
     Returns two sublists- left and right 
+
+    Split takes overall O(log n), logrithmic time because split time depends on the number of items in the array 
     """
     mid = len(list)//2
     """
     :mid means left of mid point and mid: means right of midpoint
+    technically the runtime is O(k log n) becasue we used a slicing operation 
+    we can fix this problem by using a iterative approach without using list slicing 
     """
     left = list[:mid]
     right = list[mid:]
@@ -52,6 +60,8 @@ def merge(left, right):
     Merges 2 lists (arrays), sorting them in the process
     Returns a new merged list 
     i variable used for indexes in the left list and j for indexes in the right list 
+
+    Merge runs in overall O(n) or linear time    
     """
 
     l=[]
@@ -84,5 +94,19 @@ def merge(left, right):
 
     return l
 
+def verify_sorted(list):
+    """
+    Recursive way to check if list is sorted instead of the iterative way by using a while loop
+    """
+    n = len(list)
+
+    if n == 0 or n == 1:
+        return True
+    
+    return list[0] < list[1] and verify_sorted(list[1:])
+
 alist = [60, 15, 38, 90, 98, 3, 26, 80, 77]
-print(merge_sort(alist))
+s= merge_sort(alist)
+print(s)
+print("is alist sorted?", verify_sorted(alist))
+print("is s sorted?", verify_sorted(s))
