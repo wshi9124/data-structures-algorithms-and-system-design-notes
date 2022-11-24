@@ -122,6 +122,11 @@ class LinkedList:
     """
 
     def remove_by_key(self, key):
+        """
+        1st method
+        returns the node or None if the key doesnt exist
+        Takes linear time or O(n)
+        """
         current = self.head
         previous = None 
         found = False
