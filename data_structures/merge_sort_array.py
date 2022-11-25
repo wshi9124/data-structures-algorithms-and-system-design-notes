@@ -4,7 +4,7 @@ If the array has multiple elements, split the array into halves and recursively 
 When both halves are sorted, the merge operation is applied. 
 Merge operation is the process of taking two smaller sorted arrays and combining them to eventually make a larger one.
 
-Overall merge sort takes O(n log n) or quasilinear time 
+Overall merge sort takes O(n log n) or quasilinear time or log linear time 
 It takes O(n) or linear space becasue the previously split lists are deleted from memory 
 so only last merge matters which depends on size of list or n 
 """
