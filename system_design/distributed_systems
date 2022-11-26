@@ -1,0 +1,20 @@
+System Design- the process of designing the architecture, components, and interfaces for a system so that it meets the end-user requirements.
+
+Distributed System- computing environment in which various components are spread across multiple computing devices on a network. 
+These devices split up the work, coordinating their efforts to complete the job more efficiently 
+than if a single device had been responsible for the task.
+Whenever its possible we should avoid using distributed systems. 
+All the complexity should be hidden from the user. 
+
+Things that can go wrong in a distributed system:
+1) Client cant find the server- client sends request but server not responding. 
+2) Server crash mid request- you do find request but while it is processing the server breaks down. 
+3) Server response is lost- server has a response but the network fails when sending data back to client
+(server thinks its done its job but client still doesnt have a response).
+4) Client crashes- when client breaks and server has nothing to send data back to.
+
+Benefits of distributed systems:
+1) More reliable, fault tolerant- if your running on a single machine if that does down, whole system goes down.
+2) Scalability- you can add more machines or nodes to scale up.
+3) Lower Latency, increase performance- you can run your applications out of multiple data centers (closer to user).
+4) Cost effectivce- You can't buy a larger single machine, instead you can buy a lot of smaller ones.

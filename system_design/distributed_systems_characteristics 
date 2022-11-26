@@ -1,0 +1,15 @@
+Distributed Systems Characteristics 
+
+1) No shared clock- all the individual servers are running on their own time
+Can lead to an issue call clock drift or when timers on each computer get out of sync 
+That is why you need to synchronize your servers (very important for time sensitive servers like a stock trading site) 
+
+2) No shared memory- Each node or server in your system has its own storage, so if it needs data 
+from somewhere else it is going to have to request it from the part of the system that has it. 
+
+3) Shared Resources- Anything in the distributed system should be able to be shared between nodes on the system.
+
+4) Concurrency and Consistancy- different parts of the system are working together and at the same time.
+
+5) Different parts of the distributed system need to be able to "talk" to each other. 
+This requires an uniform format or protocol so different parts can understand each other.

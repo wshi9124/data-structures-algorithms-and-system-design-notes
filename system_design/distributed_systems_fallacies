@@ -1,0 +1,20 @@
+Fallacies of Distributed Systems- False assumptions that programmers new to distributed systems make 
+
+1) Network is reliable- Not true becasue there are many machines talking to each other 
+
+2) Latency is Zero- Never assume that there is no delay between data being sent and data being received
+because latency is determined by distance and speed of light
+
+3) Bandwidth is infinite- Never assume that the amount of data that can transfered is infinite
+
+4) The network is secure- always design systems to make sure the network is as secure as possible
+
+5) Topology doesn't change- topology refers to the manner in which the links and nodes of a network are arranged and relate to each other.
+This changes all the time because servers get brought up, rearranged, and updated all the time. 
+ 
+6) There is only one administrator- there will always be multiple people working on the system and managing it.
+
+7) Transport cost is zero- The bigger the network, the bigger the financial cost.
+(Servers, network switches, load balancers, proxies, firewalls, operating and maintaining the network, making it secure, and staff).
+
+8) The network is homogeneous- distributed systems need to integrate with multiple types of devices, adapt to various operating systems, work with different browsers, and interact with other systems. 

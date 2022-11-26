@@ -1,0 +1,28 @@
+System Design and Distributed Systems Performance Metrics 
+
+1) Scalability- Ability of a system to grow and manage increased traffic, requests and data volume.
+Want to achieve this goal ideally without the lost of performance.
+
+2) Reliability- Probability that a system will fail during a period of time.
+Slightly harder to define than hardware reliability (cpu, hard drive).
+Mean Time Before Failure Formula :
+MTBF = (Total Elapsed Time - Total Downtime)/ Number of Failures 
+
+3) Availability- Amount of time a system is operational during a period of time.
+Poorly designed software is a site where it needs to be down for maintenence.
+Can be maintained by redundency.
+Availabilty  Calculation:
+Availability % = (Available time / Total Time) X 100 
+
+Reliable vs Available:
+-A reliable system is always an available system.
+This means that the system will never have any errors and therefore will not break. 
+-Availability can be maintained by redundency but system might not be reliable. 
+-Reliable systems are more profitable because the service requires less backup resources.
+-A company's investment into reliability depends on what their service is.
+(It is less damaging for a fb post to not post the first time vs buying a stock)
+
+4) Efficiency- how well the system performs 
+Common metrics for efficiency:
+1) Latency- How long the request takes to get back to the user and delay
+2) Throughput- Total amount of requests and traffic that your system can handle.  
