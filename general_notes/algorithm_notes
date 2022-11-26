@@ -23,11 +23,18 @@ O(n^k)- polynomial runtime, considered efficient and likely used in practice (Al
 O(2^n)- exponential time (ex: brute force method)
 O(n!)- factorial time complexity (ex: traveling salesman problem 3!= 3*2*1)
 
-Recursive Function- function that calls on itself (see recursive_binary_search.py)
+Recursive Function- function that calls on itself (see recursive.py)
 Always need a stopping condition or base case
 Recursive Depth- number of times a recursive function calls on itself
 
-Iterative Function-  function that loops to repeat some part of the code
+Iterative Function- function that loops to repeat some part of the code
+
+Divide And Conquer Technique- some examples that use this technique is quicksort and merge sort
+This technique can be divided into the following three parts:
+1) Divide: This involves dividing the problem into smaller sub-problems.
+2) Conquer: Solve sub-problems by calling recursively until solved.
+3) Combine: Combine the sub-problems to get the final solution of the whole problem.
+
 
 *Python preferes iterative functions over recursive functions becasue of space complexity*
 *However, that is not the case for some other languages such as Swift*

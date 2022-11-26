@@ -1,3 +1,5 @@
+"""Linear Search has a linear runtime or O(n)"""
+
 def linear_search(list, target):
     """ 
     returns the index position of the target if found, else returns None 
@@ -22,4 +24,17 @@ verify(result)
 result= linear_search(numbers, 6)
 verify(result)
 
-"""Linear Time runtime O(n)"""
+"""
+Another example of linear search
+"""
+
+def index_of_item(collection, target):
+    for i in range(0, len(collection)):
+        if collection[i] == target:
+            return i 
+    return None 
+
+names = ["Willie","Alan","Kai","Tony"]
+
+n = "Alan"
+print(index_of_item(names,n))
