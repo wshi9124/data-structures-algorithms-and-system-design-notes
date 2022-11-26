@@ -5,5 +5,7 @@ It also includes images for reference
 #####
 The data_structures and algorithms folders contain individual examples as well as more specific notes on topics. 
 #####
+The system design folder contains notes on system design 
+#####
 All the code and examples in this repository is based on python
 
