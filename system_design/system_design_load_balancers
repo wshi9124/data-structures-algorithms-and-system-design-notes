@@ -1,0 +1,4 @@
+Load Balancers- Balance incoming traffic to multiple servers so that none of them are being overloaded or underutilized.
+-Software or hardware based.
+-Improves reliability and scalability.
+(ex: amazon adding servers for Chirstmas or Black Friday)

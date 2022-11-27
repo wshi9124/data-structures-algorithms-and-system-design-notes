@@ -1,0 +1,19 @@
+Horizontal vs Vertical Scaling 
+
+Reasons single server applications are running slow 
+CPU- if the application has certain functions that require a lot of processing power.
+Memory- if the application needs to hold large chunks of memory.
+I/O- how fast application can read from storage (ex acessing images/videos from hardrive).
+Bandwidth- amount of data you can push through a network.
+
+Vertical Scaling- getting a bigger server or upgrading whatever area your server is failing in (single huge server).
+-Easiest way to scale an application.
+-However, there are diminishing returns and it limits scalability (ex: adding extra cpu cores doesnt increase performance uniformally).
+-Single point of failure.
+
+Horizontal Scaling- having multiple smaller servers that can be scaled up or down to handle traffic 
+-More complex upfront, but more efficient long term.
+-Redundency built in.
+-Need load balancer to distribute traffic.
+-Cloud servers make this easier (buzzwords: kubernetes, docker, hadoop(map reducer)).
+-Better for latency because servers can better reach people around the world instead of a single server in a single place. 

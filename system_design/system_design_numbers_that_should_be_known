@@ -1,0 +1,56 @@
+Numbers that programmers should know 
+
+1) Latency numbers- if possible make sure you have your data locally for faster runtimes.
+
+From better to worst in speed
+CPU cycle -> CPU L1 cache -> CPU L2 cache -> CPU L3 cache -> Main Memory(RAM) -> SSD -> HDD -> location to location
+
+Guidelines:
+-Avoid network calls wheneer its possible.
+-Replicate data across data centers for disaster recovery as well as performance (redundency).
+-Use CDNs (Content distribution networks)- service that gives and serves you data as close to the user as possible  
+Ex Map Reducing- programming model for processing and generating big data sets with a parallel, distributed algorithm on a cluster.
+This means that each server that has the data will run the calulations locally and then send the results to another server to put 
+the calculations together (used to reduce latency). 
+
+2) Quick Math for Capacity Estimates 
+Basic data conversions:
+8 bits --------------> 1 byte
+1024 bytes ----------> 1 Kilobyte
+1024 Kilobytes ------> 1 Megabyte 
+1024 Megabytes ------> 1 Gigabyte
+1024 Gigabytes ------> 1 Terabyte
+
+Common Data Types:
+Char ------------> 1 byte
+Every character in string is 1 byte 
+Integer ---------> 4 bytes 
+Every Integer is 4 bytes  
+UNIX Timestamp --> 4 bytes 
+
+Time:
+3600 seconds per hour 
+86400 seconds per day
+2500000 seconds per month 
+
+3) Traffic estimates:
+Average daily users * average reads / writers per user 
+10 million daily average users * 30 average photos viewed = 300 million photo requests 
+300 million photo requests / 86400 seconds a day = 3472 requests per second 
+
+4) Memory estimates:
+Read requests per day * Average Request size * 20%
+(generally speaking 20% of your data will be 80% of your overall request or traffic)
+300 million requests * 500 Bytes = 150 Gigabytes 
+150GB * 20% = 30 Gigabytes (most frequently access data stored)
+30GB * 3(replication) = 90 Gigabytes 
+
+5) Bandwidth estimates:
+Request per day * Request size 
+300 million requests * 1.5 MB = 450000 Gigabytes 
+450000GB // 86400 seconds per day = 5.2GB per second
+
+6) Storage estimates:
+Writes per day * Size of writes * Time to store data 
+10 million writes * 15MB = 15 TB per day
+15TB * 365 days * 10 years = 55 Petabytes 

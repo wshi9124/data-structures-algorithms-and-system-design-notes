@@ -24,5 +24,11 @@ This means that the system will never have any errors and therefore will not bre
 
 4) Efficiency- how well the system performs 
 Common metrics for efficiency:
-1) Latency- How long the request takes to get back to the user and delay
-2) Throughput- Total amount of requests and traffic that your system can handle.  
+-Latency- How long the request takes to get back to the user and delay
+-Throughput- Total amount of requests and traffic that your system can handle.  
+
+5) Manageability- Speed and difficulty involved with maintaining the system 
+Factors that affect manageability:
+Observability- how hard is it to track bugs 
+Difficulty of deploying updates 
+Abstact away infastructure so product engineers don't have to worry about it 
