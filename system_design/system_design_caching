@@ -1,0 +1,42 @@
+Caching- taking data that would be normally stored on a hard drive and storing it in memory
+-Improve performance of application and save money 
+-Instead of retrieving data from the database, it is faster to retrieve it from the cache
+
+Speed and Performance:
+1) Reading from memory is faster than disk, 50-200X faster
+2) This means that it can serve the same amount of traffic with fewer resources.
+3) Its possible to pre-calculate and cache data in advance.
+(ex: twitter knows users are going to want their timelines very fast so they'll precompute what their timeline is).
+4) Most apps have more reads than writes, which is perfect for caching.
+
+Caching Layers- you can also use caching not just in front of your database:
+1) DNS (Domain Name System)- ex: when your type a website in, you go to an ip address and to get that you go to a DNS server.
+Then it stores the ip address so you can go to it directly without talking to the server again  
+2) CDN (Content Distribution Networks)- a geographically distributed network of proxy servers and their data centers to boost performance.
+3) Application
+4) Database
+
+Caching Pseudocode- Retrieval (Python)
+
+def app_request(tweet_id):
+    cache = {}
+
+    data = cache.get(tweet_id)
+
+    if data:
+        return data 
+    else:
+        data = db_query(tweet_id)
+        #set data in cache 
+        cache[tweet_id] = data
+        return data 
+
+Caching Pseudocode- Writing (Python)
+    
+    def app_update(tweet_id, data):
+        cache = {}
+
+        db_update(data)
+        
+        #prevent issue called stale data
+        cache.pop(tweet_id)

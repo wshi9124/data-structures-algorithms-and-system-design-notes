@@ -1,0 +1,19 @@
+Distributed Cache- Works the same way as traditional cache.
+Has built in functionality to replicate data, shard data across servers, and locate proper server for each key.
+Used for reliability and redundency. 
+Ideally you do not have to use your backup caches, but it is there just in case your active ones goes down. 
+It is good for backups to "warm-up" or pre-query the database so backup caches can fill up.
+
+Cache Eviction- Needed for 2 reasons 
+-Preventing stale data.
+-Caching only the most valuable data to save resources 
+
+1) TTL (Time to live)- set a time period before a cache is deleted.
+Used to prevent stale data.
+Time that you set depends on how essential it is for data to be fresh. 
+ 
+2) LRU (Least Recently Used)- Once cache is full remove last accessed key and add new key.
+
+3) LFU (Least Frequently Used)- Tracks number of time a key is accessed, drops least used when cache is full.
+
+Ex: a tweet from an account with 10 followers during 2010 vs a tweet yesterday from an account with millions of followers

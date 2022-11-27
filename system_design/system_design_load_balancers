@@ -1,4 +1,34 @@
 Load Balancers- Balance incoming traffic to multiple servers so that none of them are being overloaded or underutilized.
--Software or hardware based.
--Improves reliability and scalability.
-(ex: amazon adding servers for Chirstmas or Black Friday)
+-Software (Nginx and HAProxy) or hardware (F5 and Citrix) based.
+-Improves reliability and scalability. 
+(ex: amazon adding servers for Chirstmas or scaling down during less busy times)
+-In production, there are multiple load balancers so there is no single point of failure (active and passive load balancers). 
+
+Load Balancing Routing Methods
+1) Round Robin- when your load balancer has a list of servers available, and it will route them by cycling through each server.
+-Simplest type of routing
+-However it can result in uneven traffic becasue not all requests are them same, so some servers will do more work than others.
+
+2) Least Connections- Routes are based on the number of client connections to server  
+Good for chat and streaming applications where users are staying persistantly connected to the server. 
+
+3) Least Response Time- Routes are based on how quickly servers respond 
+
+4) IP Hash- Routes client or server based on IP
+Useful for stateful sessions
+(Ex shopping cart on Amazon)
+
+
+2 Types of Load Balancers (Layer 4 vs Layer 7)
+1) Layer 4- Only have access to TCP and UDP data 
+-Simpler and faster becasue it doesnt have to use as much processing power to look at each request. 
+-However, since it doesnt have access to all available information, it can lead to uneven traffic. 
+-Good on edge of data center or network because it can look at IP address to address hackers.
+-Good to route all incoming traffic through a layer 4 load balancer before allowing it further into your application.
+
+2) Layer 7- Full access to HTTP protocol and data.
+-Can terminate SSL and decrypt traffic.
+-Can check for authentification.
+-Smarter routing options.
+-However, it is more CPU intensive. 
+
