@@ -1,0 +1,59 @@
+Design a Youtube Clone 
+
+Requirements 
+-Video upload 
+-View uploaded videos 
+-Search for videos
+-Track stats for videos 
+-Comment on videos 
+
+Capacity Estimates
+1) Storage- 500 hours of video uploaded per minute 
+500 hours * 60 = 30,000 minutes of video per minute
+30,000 * 50mb // 1000 = 1500GB uploaded per minute
+1500 * 60 * 24 // 1000 = 2160 TB per day or 2.16 PB per day
+
+2) Bandwidth- 1 Billion hours of video watched per day
+1000000000 * 3GB per hour // 10000 = 3000000 PB bandwidth/day
+
+DataBase Design:
+
+User Table
+-user_id
+-username
+-email
+-bio
+
+Video Table 
+-video_id
+-title
+-description
+-thumbnail
+-user
+-likes 
+-dislikes
+-views
+
+Comment Table 
+-comment_id
+-video_id
+-user_id
+-comment
+-time 
+
+System Architecture- refer to system architecture image 
+-Client- user on phone, desktop, tv, etc.
+
+-CDN (content distribution network)- where most popular videos are being served from to reduce latency
+
+-Web server- acts as a load balancer and distribute traffic evenly to our multiple app servers in the back ground  
+
+-App server- it is what is going to be talking (brains of the application)
+
+-Processing queue- gives durability in the video upload process (if any part of the upload process fails, it can retry again)
+
+-Video upload servers- thumbnail generation, precreate files for every video format 
+
+-Video object storage- open source or amazon s3 
+
+-User data/Video Metadata- used for when user searches for videos 
