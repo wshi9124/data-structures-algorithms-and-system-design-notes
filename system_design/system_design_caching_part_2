@@ -16,4 +16,18 @@ Time that you set depends on how essential it is for data to be fresh.
 
 3) LFU (Least Frequently Used)- Tracks number of time a key is accessed, drops least used when cache is full.
 
-Ex: a tweet from an account with 10 followers during 2010 vs a tweet yesterday from an account with millions of followers
+Ex: a tweet from an account with 10 followers during 2010 vs a tweet yesterday from an account with millions of followers.
+
+Caching Strategies:
+1) Cache Aside- when your application needs to read data from the database, it checks the cache first to determine whether the data is available.
+-Most common Strategy
+
+2) Read Through- when you use cache as the main data store and reads data from it and writes data to it. 
+
+3) Write Through- to increase the amount of writes the database can handle, the cache is updated before the database. 
+However, this increases latency and slows things down
+
+4) Write back- writing data directly to the cashe.
+However, if your cache fails before it can write that data to the database, you can have an issue with data loss.  
+
+Cache Consistancy- making sure cache and database are showing the same thing. 

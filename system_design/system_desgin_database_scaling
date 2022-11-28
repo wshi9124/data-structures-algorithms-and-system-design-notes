@@ -1,0 +1,47 @@
+Data Base Scaling
+For most large applications the database is usually going to be where the performance bottleneck is.
+That is because your application servers are essentially stateless, so you can scale them horizontally as much as you need.
+All those servers are going to have to go to the database for retrieving new data or writing new data. 
+
+*Most web apps are very read heavy
+You should prioritize and build around the idea that your databases are going to be receiving alot reads than writes.
+
+Basic Scaling Techniques 
+1) Vertical Scaling- getting a bigger server.
+-easiest solution when starting out.
+
+2) Indexes- Creating an index on a certain column that is frequently accessed (ex: user_id).
+-Speeds up read performance an index that speeds up the lookup so it doesn't have to do full table scans across database.
+-However, writes and updates become slightly slower (everytime you update a row, you also have to modify the index).
+-Require more storage because you have to store the index itself. 
+
+3) Denormalization- When you go against a standard best practice with relational databases and you add redundant data to tables to 
+reduce the amount of joins you do to improve read performance.
+-However, this also slows write performance and risks inconsistant data across tables. 
+-Code is harder to write because you have to update all the tables that data is located in.   
+
+4) Connection Pooling- Allows multiple application threads to use same db connection
+-Instead of every application thread using its own connection, they are pooled together and uses the same one. 
+
+5) Caching- sits in front of database and serves traffic from memory rather than read from disk. 
+(Ex: redis and memcached)
+-You can't cached everything, especially data that is frequenctly updated (ex: real time drivers location).
+
+Replication and Partitioning 
+1) Read Replicas- when you duplicate your databases to have a master and replicas.
+-The master will handle all incoming write data.
+-Replica servers handle reads or anything requesting data to take traffic load off of the master. 
+-However, there will be consistancy issues if the connection between master and replicas are broken. 
+
+Partitioning 
+1) Sharding- horizontal partitioning, schema of the table stays the same, but it is split across multiple DBs.
+(Ex: people with names A-M is stored in one DB and people with names  N-Z are stored in another DB). 
+Upside- can handle more traffic. 
+Downside- hotkeys(X,Y,Z will have less traffic than other keys, so uneven traffic across different DBs),
+no joins across shards or if you do its very slow.
+
+2) Vertical Partitioning- Divide schema into separate tables.
+-Generally divide by functionality. 
+-Best when most data in row isn't needed for most queries
+(ex: splitting ID and username apart from email and address in table)
+-Easier to implement than sharding 

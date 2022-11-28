@@ -12,8 +12,8 @@ Vertical Scaling- getting a bigger server or upgrading whatever area your server
 -Single point of failure.
 
 Horizontal Scaling- having multiple smaller servers that can be scaled up or down to handle traffic 
--More complex upfront, but more efficient long term.
+-More complex and costly upfront, but more efficient long term.
 -Redundency built in.
 -Need load balancer to distribute traffic.
 -Cloud servers make this easier (buzzwords: kubernetes, docker, hadoop(map reducer)).
--Better for latency because servers can better reach people around the world instead of a single server in a single place. 
+-Better for latency because servers can be run around the world instead of a single server in a single place. 

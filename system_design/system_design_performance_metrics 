@@ -32,3 +32,4 @@ Factors that affect manageability:
 Observability- how hard is it to track bugs 
 Difficulty of deploying updates 
 Abstact away infastructure so product engineers don't have to worry about it 
+

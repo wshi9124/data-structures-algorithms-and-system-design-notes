@@ -37,6 +37,6 @@ Caching Pseudocode- Writing (Python)
         cache = {}
 
         db_update(data)
-        
-        #prevent issue called stale data
+
+        #prevent issue called stale data- dont want user to see old data 
         cache.pop(tweet_id)
