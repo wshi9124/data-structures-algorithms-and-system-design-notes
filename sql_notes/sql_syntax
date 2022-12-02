@@ -1,0 +1,35 @@
+Syntax for MySQL
+-SQL is not a case sensitive language. But it is best practice is to capitalize SQL keywords and lowercase everything else.
+
+-You need to terminate statements with ';'
+
+-If you want to have a space in between column name you need to use '' or "" (ex: discount_factor -> 'discount factor')
+
+1) 'USE' is used to select a database
+
+2) 'SELECT' is used to indicate the columns that you want to retrieve 
+    -'*' means all columns
+    -You can change the order of the columns by changing the order specified after the select phrase(ex: SELECT last_name, first_name).
+    -You can use arithmetic expressions such as +,-,*,/,and % on columns. It follows the order of operations. (ex: SELECT points + 10) 
+    -'AS' keyword is used to give column an alias (different name) (ex: SELECT points + 10 AS discount_factor)
+    -'DISTINCT' keyword is used to remove duplicates
+    (ex: SELECT DISTINCT state)
+
+4) "FROM" is used for location of the table
+
+5) "WHERE" is used to filter the table (optional)
+    -Operators that can be used: >, >=, <, <=, =, (!= and <> same)
+    -Uppercase and lowercase doesnt matter (ex: WHERE state= 'va' or WHERE state='VA')
+    -You can use operators on dates but use 'YYYY-MM-DD'. (ex: WHERE birthdate > '1990-01-01')  
+
+    -AND, OR and NOT operators are available to use
+    However AND operator is always evaluated first then OR unless parenthesis are used. 
+    (ex: WHERE NOT (birth_date > '1990-01-01' OR points > 1000)
+    can also be written as 
+    WHERE (birth_date <= '1990-01-01' AND points <= 1000) )
+
+    -IN operator (ex: WHERE state IN ('VA', 'FL', 'GA') 
+    can also be written as
+
+
+6) "ORDER BY" iss used to organize the table (optional)   

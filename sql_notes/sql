@@ -1,0 +1,16 @@
+Database- collection of data stored in a format that can easily be accessed.
+Database management system (DBMS)- software application to manage databases
+
+Relational- data is stored in tables that are linked to each other using relationships.  
+NoSQL or non relational- no tables or relationships.
+
+SQL (Structured Query Language)- language we use to work with these relational database management systems 
+
+Relational Database Management Systems
+-MySQL
+-SQL Server
+-Oracle
+-PostgreSQL
+-SQLite
+
+
