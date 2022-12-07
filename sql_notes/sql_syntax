@@ -29,7 +29,17 @@ Syntax for MySQL
     WHERE (birth_date <= '1990-01-01' AND points <= 1000) )
 
     -IN operator (ex: WHERE state IN ('VA', 'FL', 'GA') 
-    can also be written as
+    can also be written as 
+    WHERE state = 'VA' or state = 'FL' or state = 'GA' )
+
+    -BETWEEN operator (ex: WHERE points BETWEEN 1000 AND 3000
+    can also be written as 
+    WHERE points >= 1000 and points <= 3000)
+    These numbers are inclusive 
+
+    -LIKE used to match rows with a specific string pattern
+    starts with b 'b%' includes b anywhere '%b%' end with b '%b' exactly 2 character long but second is y '_y'
+    (ex: WHERE last_name Like 'b%')
 
 
 6) "ORDER BY" iss used to organize the table (optional)   

@@ -1,0 +1,3 @@
+What DSA to know:  
+Data Structures: Arrays and lists (critical), Binary trees (critical), Hash tables (critical), Stacks and queues (critical), Graphs (critical), Trie (nice to have), Heap (nice to have), Set (nice to have), Red-black trees (nice to have)
+Algorithms/CS Concepts: Search (iterator, binary, hash - all critical), Sort (merge, quick, bucket - all critical), Graph traversals (BFS, DFS - all critical), Complexity and big O notation (critical), Recursion (critical), Randomized quicksort (nice to have), Heap sort (nice to have), Radix sort (nice to have), Spanning tree and minimum cut (nice to have)

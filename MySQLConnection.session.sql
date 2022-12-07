@@ -1,6 +1,1 @@
-USE sql_inventory;
-SELECT 
-    name, 
-    unit_price, 
-    unit_price * 1.1 AS "new price"
-FROM products
+SELECT * FROM customers WHERE birth_date BETWEEN '1990-01-01' AND '2000-01-01'
