@@ -1,0 +1,78 @@
+Joins are used to see data from different tables
+There are 2 types of JOINS, INNER JOINS(JOIN) and OUTER JOINS(LEFT JOIN and RIGHT JOIN) 
+
+"INNER JOIN" - word INNER is optional you can just type JOIN
+(ex: 
+SELECT order_id, orders.customer_id first_name, last_name
+FROM orders 
+JOIN customers 
+    ON orders.customer_id = customers.customer_id
+)
+
+NOTE: you need to have orders.customer_id or customers.customer_id 
+and not customer_id when trying to show it in SELECT
+
+You can have aliases for customers and orders 
+(ex: 
+SELECT order_id, o.customer_id, first_name, last_name
+FROM orders o
+JOIN customers c
+    ON o.customer_id = c.customer_id
+)
+1) Joining Across databases 
+(ex: 
+SELECT *
+FROM order_items oi
+JOIN sql_inventory.products p
+    ON oi.product_id = p.product_id
+)
+You only have to prefix the tables that are not part of the current database 
+
+2) self joins -used when a table references data in itself.
+(ex:
+SELECT * 
+FROM employees e
+JOIN employees m
+    ON e.reports_to = m.employee_id
+)
+Same as joining with other tables except we have to use different aliases and prefix each column with an alias 
+
+3) Join multiple tables 
+(ex: 
+SELECT 
+    o.order_id,
+    o.order_date,
+    c.first_name,
+    c.last_name,
+    os.name AS status 
+FROM orders o 
+JOIN customers c
+    ON o.customer_id = c.customer_id
+JOIN order_statuses os
+    ON o.status = os.order_status_id 
+)
+ 
+4) Compound JOIN  conditions
+(ex:
+SELECT *
+FROM order_items oi 
+JOIN order_item_notes oin
+    ON oi.order_id = oin.order_id
+    AND oi.product_id = oin.product_id
+)
+
+5) Implicit JOIN syntax- suggest not to use 
+(ex:
+SELECT *
+FROM orders o, customers c 
+WHERE o.customer_id = c.customer_id
+
+is same as:
+
+SELECT * 
+FROM orders o
+JOIN customers c
+    ON o.customer_id = c.customer_id
+)
+
+

@@ -34,9 +34,28 @@ def twoSum(self, nums, target):
     :type nums: List[int]
     :type target: int
     :rtype: List[int]
+    Time complexity: O(n^2)
+    Space complexity O(1)
     """
     for i in range(0,len(nums)):
         for j in range(i+1, len(nums)):
             if nums[i] + nums[j] == target:
                 return [i,j]
-        
+
+def two_sum_better_way(nums, target):
+    """
+    Time Complexity: O(n)
+    Space Complexity O(n)
+    """
+    hashmap = {}
+
+    for i in range(0, len(nums)):
+        other_number = target - nums[i]
+        if other_number in hashmap:
+            return [i, hashmap[other_number]]
+        else:
+            hashmap[nums[i]] = i
+
+numbers = [1,5,7,9,213,3214]
+target_number= 214
+print(two_sum_better_way(numbers, target_number))
