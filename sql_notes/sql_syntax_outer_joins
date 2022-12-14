@@ -1,0 +1,3 @@
+OUTER JOIN is used instead of INNER JOIN when you want to see all the data even if the data is null
+
+There 

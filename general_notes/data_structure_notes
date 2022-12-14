@@ -26,6 +26,14 @@ Uses index to access, insert, update and delete values
 *called list in python array is sometihng else in python*
 *lists in python are heterogenous*
 
+There are four collection data types in the Python programming language:
+
+List is a collection which is ordered and changeable. Allows duplicate members.
+Tuple is a collection which is ordered and unchangeable. Allows duplicate members.
+Set is a collection which is unordered, unchangeable*, and unindexed. No duplicate members.
+Dictionary is a collection which is ordered** and changeable. No duplicate members.
+
+
 2) Linked List- linear data structure where each element in the list is contained in a separate object called a node
 Node- models 2 pieces of information, an individual item of the data we want to store and a reference to the next node in the list 
 The first node of a linked list is the head and the last node is the tail
@@ -35,3 +43,33 @@ Better at inserting and deleting than arrays
 2 Types of Linked List
 1) Singly Linked List- each node stores a reference to the next node in the list  
 2) Doubly Linked List- each node stores a reference to both the node before and after the list
+
+3) Tree- non linear data structure where there is a collection of entities called nodes linked together to simulate a hierarchy 
+Used to represent hierarchical data (ex: employees in an organization)
+Each node can contain data of any type
+
+Recursive data structure- structure that consists of a distinguish node called root and and some sub trees and the arrangement
+is that the root of the tree contains link to roots of all the subtrees 
+
+In a tree with n nodes, there will be exactly n-1 link or edges (one link or edge for each node except the root)
+
+Depth of x = length of the path(edges) from root to x 
+Height of x = number of edges in longest path x to a leaf 
+(height of leaf node is 0, height of tree = height of root node) 
+
+Vocabulary
+First node of a tree is called the root node  
+Subtrees- nodes that are linked from the root node 
+They also may contain link or reference to some other nodes that can be called its children
+If a node has children then it is the parent of the children nodes 
+Children of same parents are called siblings
+Nodes not having the same parents but the same grandparents can be called cousins 
+Uncles also exist in Trees
+Any node that does not have a child is called the leaf node 
+Parent of parent is grandparent 
+The links are one way direction 
+Ancestor and descendant is self explanatory
+
+Types of Trees
+Binary Tree- a tree in which each node can have at most 2 children 
+

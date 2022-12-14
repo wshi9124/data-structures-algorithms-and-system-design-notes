@@ -38,3 +38,10 @@ This technique can be divided into the following three parts:
 
 *Python preferes iterative functions over recursive functions becasue of space complexity*
 *However, that is not the case for some other languages such as Swift*
+
+Depth First Search(DFS) - algorithm used for nodes and edges of a graph. 
+Runs in O(V+E)
+V= vertices 
+E= edges 
+DFS plunges depth first into a graph without regard for which edge it takes next until it cannot go any further at which point it back tracks and continues.
+Has to start at a node 
