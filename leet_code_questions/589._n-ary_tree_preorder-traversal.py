@@ -11,3 +11,35 @@ Example 2:
 Input: root = [1,null,2,3,4,5,null,null,6,7,null,8,null,9,10,null,null,11,null,12,null,13,null,null,14]
 Output: [1,2,3,6,7,11,14,4,8,12,5,9,13,10]
 """
+def preorder_recursive(root):
+    """
+    :type root: Node
+    :rtype: List[int]
+    """
+    output = []
+
+    def dfs(node):
+        if not node:
+            return
+        output.append(node.val)
+
+        for c in node.children:
+            dfs(c)
+    
+    dfs(root)
+    return output
+
+def preorder_iterative(root):
+    """
+    We use deque becasue poping takes O(1) time instead of O(n)
+    """
+    if not root: return []
+    q = deque([root])
+    output = []
+
+    while q:
+        cand = q.popleft()
+        output.append(cand.val)
+        for c in reversed(cand.children):
+            q.appendleft(c)
+        return output   
