@@ -1,3 +1,57 @@
 OUTER JOIN is used instead of INNER JOIN when you want to see all the data even if the data is null
 
-There 
+Left Join- when we use left join, all the records from the left table are returned wheather the condition is true or not 
+Right Join- when we use right join, all the records from the right table are returned wheather the condition is true or not 
+(You can write LEFT OUTER JOIN or RIGHT OUTER JOIN, however, they are optional)
+
+ex:
+SELECT
+    c.customer_id,
+    c.first_name,
+    o.order_id
+FROM customers c
+LEFT JOIN orders o
+    ON c.customer.id = o.customer_id
+Order BY c.customer_id
+
+You can also join from multiple tables 
+However avoid using Right Joins
+
+Just like self inner joins you can do self outer joins 
+
+1) USING clause
+If the column name is exactly the same across two tables that are joining you can simplify:
+
+ex: ON o.customer_id = c.customer_id 
+is the same as 
+USING (customer_id)
+
+You can use the USING clasue on both inner and outer joins 
+
+2) NATURAL JOIN- we dont specify the column name, but the database engine will look at the 2 tables and join 
+them based on common columns  
+However, they are not recommended because they can produce unexpected results
+
+ex: SELECT 
+    o.order_id
+    c.first_name
+FROM orders o 
+NATURAL JOIN customers c 
+
+3) CROSS JOIN- used to join every record from the first table, with every record in a second table. 
+Used to find every combination of results 
+
+ex: SELECT 
+        c.first_name AS customer
+        p.name AS product
+    FROM customers c 
+    CROSS JOIN products p
+    ORDER BY c.c.first_name
+
+is the same as 
+
+SELECT 
+        c.first_name AS customer
+        p.name AS product
+    FROM customers c, products p
+    ORDER BY c.c.first_name
