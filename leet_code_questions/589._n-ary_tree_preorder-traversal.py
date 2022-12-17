@@ -31,7 +31,7 @@ def preorder_recursive(root):
 
 def preorder_iterative(root):
     """
-    We use deque becasue poping takes O(1) time instead of O(n)
+    We use deque becasue poping takes O(1) time instead of O(n) in case of lists.
     """
     if not root: return []
     q = deque([root])

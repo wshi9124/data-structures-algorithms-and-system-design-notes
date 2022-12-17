@@ -1,0 +1,111 @@
+Column attributes 
+PK- Primary key
+AI- Auto Increment - used with primary key so everytime a record is inserted into the table,
+it automatically inserts a value into the column 
+NN- Not Null- determines if the column can accept null values or not 
+Default- specifies the default value for each column 
+1)INT - integers
+2)VARCHAR(50)- (variable char) means that column can only accept a maximum of 50 characters 
+If the name of the characters is only 5 characters long it will only store 5 characters 
+3) CHAR()- almost same as VARCHAR
+However, VARCHAR() is preferred over CHAR() becasue CHAR() will store additional space to
+fill the column
+ex: CHAR(50) If the name of the characters is only 5 characters long it will insert 45 spaces to the column 
+
+Inserting a row into a table
+INSERT INTO 
+DEFAULT can be used when column is AI or if there is a default value 
+
+ex: 
+INSERT INTO customers
+VALUES (
+    DEFAULT, 
+    "John", 
+    "Smith", 
+    NULL,
+    DEFAULT,
+    "address",
+    "city",
+    "NY",
+    DEFAULT )
+
+You can also optionally supply the list of columns you want to insert values into  
+INSERT INTO customers (
+    first_name, 
+    last_name, 
+    address,
+    city,
+    state)
+VALUES (
+    "John", 
+    "Smith", 
+    "address",
+    "city",
+    "NY" 
+    )
+
+Inserting multiple rows
+ex:
+INSERT INTO shippers(name)
+VALUES ("Shipper1"), ("Shipper2"), ("Shipper3") 
+
+Inserting data to multiple tables- Hiearchical data  
+ex:
+INSERT INTO orders(customer_id, order_date, status)
+Values (1, "2019-01-01", 1);
+
+INSERT INTO order_items(order_id, product_id, quantity, unit_price)
+VALUES 
+    (LAST_ORDER_ID(), 1, 1, 2.95),
+    (LAST_ORDER_ID(), 2, 1, 3.95),
+
+Creating a copy of a table 
+CREATE TABLE order_archived AS
+SELECT * FROM orders  
+
+However when you create these tables MySQL wont mark PK(primary key) and AI(auto increment) 
+
+Using SELECT statement as a subquery in a insert statement  
+
+CREATE TABLE orders_archieved AS 
+SELECT *
+FROM orders 
+WHERE order_date < "2019-01-01"
+
+UPDATE- used to update rows
+WHERE is optional but it will update the whole table 
+ex:
+UPDATE invoices 
+SET payment_total = 10, payment_date = '2019=03=01'
+WHERE invoice_id = 1   
+
+WHERE client_id IN (3,4)
+
+Using subqueries in updates
+
+UPDATE invoices 
+SET 
+    payment_total = invoice_total * .5,
+    payment_date = due_date
+WHERE client_id = 
+        (SELECT client_id
+        FROM clients 
+        WHERE name = "Myworks")
+
+WHERE client_id IN
+        (SELECT client_id
+        FROM clients 
+        WHERE STATE IN ('CA','NY'))
+
+
+DELETE FROM - used to delete rows
+ex:
+DELETE FROM invoices 
+WHERE  invoice_id = 1
+
+DELETE FROM invoices 
+WHERE client_id = (
+    SELECT * 
+    FROM clients 
+    WHERE name = 'MyWorks'
+)

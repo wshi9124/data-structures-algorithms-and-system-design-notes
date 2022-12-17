@@ -45,3 +45,5 @@ V= vertices
 E= edges 
 DFS plunges depth first into a graph without regard for which edge it takes next until it cannot go any further at which point it back tracks and continues.
 Has to start at a node 
+
+Breadth First Search(BFS)- less efficient than DFS 
