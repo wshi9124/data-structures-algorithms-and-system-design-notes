@@ -1,0 +1,13 @@
+Dynamic Programming- any instance where we have a larger problem, and then we can decompose it to smalleer instances of the same problem 
+1) Memoization- refers to remembering results of method calls based on the method inputs 
+ and then returning the remembered result rather than computing the result again.
+
+2) Tabulation 
+
+Fib- Memoization (refer to fib.py)
+The first and second number of the sequence is 1 
+To generate the next number of the sequence, we sum the previous two numbers 
+
+Grid Traveler- Memoization (refer to grid_traveler.py)
+You are a traveler on a 2d grid. You begin in the top-left corner and your goal is to travel to the bottom-right corner. 
+You can only move down or right.  
