@@ -1,0 +1,52 @@
+Important Commands 
+1) git init
+    initialized repository
+2) git status
+    tell status of repo     
+    (can check which branch you are in with this command)
+3) git add 
+    Used to track files 
+4) git rm --cached
+    Used to untrack files 
+5) .gitignore
+    make file so github knows which file to ignore 
+    in the file you can type *.txt to ignore all txt files 
+6) git commit -m ""  
+    taking a snapshot of your repo
+    puts your files in staging
+    put --amend at the end of the commit to change commit message 
+7) git diff
+    see differences in commit
+8) git restore --staged
+    remove files from staging 
+9) git restore ""
+    restore deleted file 
+10) git log
+    review all the commits that we made
+    put -p end of git log to get more details on the commit 
+    press q to exit out of view 
+11) git reset 
+    git reset value from git log 
+    this will reset to previous commit 
+12) git rebase -i --root
+    modifys what appears in the history book and the order in which all the commits appear
+13) git branch 
+    git branch will show all the branches 
+    git branch name of branch- this will make a new branch
+14) git switch 
+    git switch name of branch will switch to new branch 
+15) git merge -m ""
+    git merge -m "message" branch you want to merge 
+    merge comflicts- head- refers to what is currently in main 
+16) git branch -d 
+    git branch name of branch will delete branch
+8) git push
+
+
+Non Important Commands 
+1) git rm ""
+    Remove file
+2) git mv "" ""
+    Change file name 
+
+
