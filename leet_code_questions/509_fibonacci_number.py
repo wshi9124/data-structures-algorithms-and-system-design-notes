@@ -20,7 +20,7 @@ Input: n = 4
 Output: 3
 Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
 """
-def fib(self, n):
+def fib(self, n, memo = {}):
     """
     :type n: int
     :rtype: int
@@ -28,7 +28,6 @@ def fib(self, n):
     Time complexity: O(n)
     Space Complexity: O(n)
     """
-    memo = {}
     if n == 0:
         return 0
     if n <= 2:
@@ -37,7 +36,7 @@ def fib(self, n):
     if n in memo:
         return memo[n]
     else:
-        result= self.fib(n-1) + self.fib(n-2)
+        result= self.fib(n-1, memo) + self.fib(n-2, memo)
         memo[n] = result
         return result
 

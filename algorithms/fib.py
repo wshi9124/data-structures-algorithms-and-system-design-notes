@@ -15,21 +15,21 @@ def fib(input):
     if input <= 2: return 1
     return fib(input-1) + fib(input-2)
     
-def fib_using_memoization(input):
+
+
+def fib_using_memoization(input, memo = {}):
     """
     Memoization- hash map, keys will be arguement to our function, value will be return value  
     Time complexity: O(n)
     Space Complexity: O(n)
     """
-    memo = {}
-
     if input <= 2: 
         return 1
 
     if input in memo:
         return memo[input]
     else:
-        result = fib_using_memoization(input-1) + fib_using_memoization(input-2)
+        result = fib_using_memoization(input-1, memo) + fib_using_memoization(input-2, memo)
         memo[input] = result
         return result
 
@@ -38,9 +38,8 @@ def fib_more_efficient(n):
 
     # n+1 is so number doesnt go out of range
     for i in range(2, n+1):
-        print(i)
         memo[i] = memo[i-1] + memo[i-2]
         
     return memo[n]
 
-fib_more_efficient(4)
+print(fib_using_memoization(20))
