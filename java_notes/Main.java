@@ -3,6 +3,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.awt.*;
 import java.text.NumberFormat;
+import java.util.Scanner;
 
 // We need a return type in Java 
 // Void is a reserve keyword in Java 
@@ -92,6 +93,12 @@ public class Main {
       String percentResult = NumberFormat.getPercentInstance().format(.9);
       System.out.println(currencyResult);
       System.out.println(percentResult);
+      //Reading Input: if you want string use scanner.next() for single string or scanner.nextLine() for nultiple strings  
+      Scanner scanner = new Scanner(System.in);
+      System.out.print("Age: ");
+      byte randomAge = scanner.nextByte();
+      System.out.println("You are " + randomAge); 
+      scanner.close();
    } 
 } 
  
