@@ -23,8 +23,8 @@ def isSubtree(self, root, subRoot):
     if subRoot == None:
         return True 
     
-    if root.val == subRoot.val:
-        self.helper_is_same_tree(root, subroot)
+    if self.helper_is_same_tree(root, subRoot):
+        return True
 
     return self.helper_is_same_tree(root.left, subRoot) or self.helper_is_same_tree(root.right, subRoot)
 
