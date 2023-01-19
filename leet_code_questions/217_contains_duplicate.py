@@ -27,3 +27,10 @@ def containsDuplicate(self, nums):
         else:
             setN.add(number)
     return False
+
+    # Inefficient way
+    # nums.sort()
+    # for i in range(len(nums)):
+    #     if nums[i] == nums[i+1]:
+    #         return True
+    # return False
