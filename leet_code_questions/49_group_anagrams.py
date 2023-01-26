@@ -29,4 +29,4 @@ def groupAnagrams(self, strs):
         else:
             dic[sotrted_word] += [word]
     
-    return dic.values()
+    return dic.values() 
