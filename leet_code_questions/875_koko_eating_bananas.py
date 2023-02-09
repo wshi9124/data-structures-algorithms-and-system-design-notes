@@ -22,18 +22,18 @@ def minEatingSpeed(self, piles, h):
     :type h: int
     :rtype: int
     """
-    l, r = 1, max(piles)
-    res = max(piles)
+    left = 1
+    right = max(piles)
+    result = max(piles)
 
-    while l <= r:
-        k = (l + r) // 2
-
-        totalTime = 0
+    while left <= right:
+        k = (left + right) //2
+        hours = 0
         for p in piles:
-            totalTime += math.ceil(p / k)
-        if totalTime <= h:
-            res = min(res, k)
-            r = k - 1
+            hours += math.ceil(float(p)/k)
+        if hours <= h:
+            result = min(result, k)
+            right = k - 1
         else:
-            l = k + 1
-    return res
+            left = k + 1
+    return result
