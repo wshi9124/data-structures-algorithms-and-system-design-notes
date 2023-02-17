@@ -23,3 +23,17 @@ kthLargest.add(10);  // return 5
 kthLargest.add(9);   // return 8
 kthLargest.add(4);   // return 8
 """
+
+def __init__(self, k, nums):
+    """
+    :type k: int
+    :type nums: List[int]
+    """
+    
+
+def add(self, val):
+    """
+    :type val: int
+    :rtype: int
+    """
+        
