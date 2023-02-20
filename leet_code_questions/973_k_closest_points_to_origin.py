@@ -17,3 +17,25 @@ Input: points = [[3,3],[5,-1],[-2,4]], k = 2
 Output: [[3,3],[-2,4]]
 Explanation: The answer [[-2,4],[3,3]] would also be accepted.
 """
+
+def kClosest(self, points, k):
+    """
+    :type points: List[List[int]]
+    :type k: int
+    :rtype: List[List[int]]
+    """
+    minHeap = []
+
+    for x,y in points:
+        distance = (x**2) + (y**2)
+        minHeap.append([distance, x, y])
+    
+    heapq.heapify(minHeap)
+    
+    result = []
+    while k > 0:
+        dist, x, y = heapq.heappop(minHeap)
+        result.append([x,y])
+        k -= 1
+    
+    return result
