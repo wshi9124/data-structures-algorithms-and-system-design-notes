@@ -28,6 +28,6 @@ def largestRectangleArea(self, heights):
             start = index
         stack.append((start, h))
     for i,h in stack:
-        maxArea = max(maxArea, h * (len(heightss) - i))
+        maxArea = max(maxArea, h * (len(heights) - i))
     
     return maxArea
