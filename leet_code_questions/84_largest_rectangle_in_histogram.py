@@ -17,18 +17,17 @@ def largestRectangleArea(self, heights):
     :type heights: List[int]
     :rtype: int
     """
-    max_area = 0
-    stack = []
+    maxArea = 0
+    stack = [] # [index, height]
 
     for i, h in enumerate(heights):
         start = i
         while stack and stack[-1][1] > h:
             index, height = stack.pop()
-            max_area = max(max_area, height * (i-index))
+            maxArea = max(maxArea, height * (i - index))
             start = index
-        stack.append(start, height)
+        stack.append((start, h))
+    for i,h in stack:
+        maxArea = max(maxArea, h * (len(heightss) - i))
     
-    for i, h in stack:
-        max_area= max(max_area, (len(heights)- i)  * h )
-
-    return max_area
+    return maxArea
