@@ -23,7 +23,7 @@ def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
     l, r = 0, len(a) -1
     while True:
         i = (l +r)//2 #a
-        j = total - i - 2 #b
+        j = half - i - 2 #b
         #float infinity for edge case if none of the numbers are in the first array
         aLeft = a[i] if i >= 0 else float("-infinity")
         aRight = a[i+1] if i+1 < len(a) else float("infinity")
@@ -31,9 +31,11 @@ def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
         bRight = b[j+1] if j+1 < len(b) else float("infinity")
 
         if aLeft <= bRight and bLeft <= aRight:
+            #odd
             if total % 2 != 0:
                 return min(aRight, bRight)
-            return max(aLeft, bLeft) + min(aRight, bRight) /2
+            #even
+            return (max(aLeft, bLeft) + min(aRight, bRight)) /2
         elif aLeft > bRight:
             r = i -1
         else:
