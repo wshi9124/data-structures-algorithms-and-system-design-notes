@@ -1,0 +1,30 @@
+Polymorphism- describes methods that are able to take on many forms
+(same method name, but different implementations of methods)
+
+2 Types of polymorphism
+
+1) Dynamic Polymorphism- occurs during runtime of the program
+-This type of polymorphism describes when a method signature is in both a subclass and a superclass
+-The methods share the same name but have different implenmentation
+-In this case, the subclass implenmentation of the method overides the superclass 
+
+ex: class car -> class sportsCar both have a .drive() function
+sportsCar .drive() method will overide the generic car .drive() method
+
+-This works because the form of the method is decided based on where in the class heirarchy it is called 
+-The implenmentation of a method signature that will be used is determined dynamically as the program is run
+
+2) Static Polymorphism- occurs during complie time rather than during runtime.
+-refers to when multiple methods with the same name but different arguements are defined in the same class 
+Ways to differentiate methods of the same name:
+-Different number of parameters
+-Different types of parameters 
+-Different order of parameters 
+Also known as method overloading- despite methods having the same name, their signatures are different due to their different arguments.
+Method overloading can cause trouble if you do not keep straight which parameters you need for which implementation.
+
+ex: car class has 3 .drive() methods 
+.drive(int spd, string dest)
+.drive(int spd, int dist)
+.drive(string dest, int spd)
+All three methods are different and have distinct signatures 
