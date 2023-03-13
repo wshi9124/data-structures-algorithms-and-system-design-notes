@@ -1,0 +1,25 @@
+Encapsulation- bundling data with methods that can operate on that data within a class
+hiding data within a class, preventing anything outside that class from directly interacting with it 
+
+-method- functions defined within the class
+members of other classes can interact with the attributes of another object through its methods
+
+-2 Types
+1) Getting methods- retrieving data 
+ex: get color for chess piece
+2) Setting methods- changing information
+
+-If you want some attributes to be read only, you would define a getter method but not a setter method
+-It is best practice to not allow anything external to directly edit an objects attributes
+
+Encapsulation:
+-keeps programmers in control of access to data
+-prevents the program from ending up in strange or unwanted states
+
+
+
+
+
+
+
+

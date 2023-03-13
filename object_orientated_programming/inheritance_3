@@ -1,0 +1,14 @@
+Inheritance - principle that allows classes to derive from other classes.
+classes can inherit certain methods and attributes from other classes 
+
+-Class hierarchy- acts as a web of classes with different relationships to one another 
+
+-Access modifiers- change which classes have access to other classes, methods or attributes
+3 Main Access Modifiers
+1) Public- can be accessed anywhere in your program
+2) Private- can only be accessed from within the same class that the members are defined 
+(best used if information not needed anywhere else)
+(private methods can have the same name in separate classes)
+3) Protected- can be accessed within the class it is defined, as well as any subclasses of that class
+
+

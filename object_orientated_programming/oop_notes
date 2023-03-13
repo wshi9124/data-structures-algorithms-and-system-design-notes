@@ -1,0 +1,35 @@
+Primative data types store single values
+
+Examples include:
+-Byte
+-Int
+-Float
+-Boolean
+-Double
+-Char
+
+Good for early programs, but as programs began to grow larger and more complex, using primative data types were not sufficient anymore
+
+↓
+
+Structure- stores many pieces of data together 
+-similar to array however structures can store different types of data together while arrays can't
+-main issue with structures is that you cannot define within one, you can only reference them
+
+object orientated programming solves this problem
+
+↓
+Object orientated programming- helps programmers create complex programs by grouping together related data and functions 
+
+Objects- instances of a class
+- classes are a template for an object
+
+Ex: knight on a chess board
+class- represents any given knight (how they move)
+object- represents only one singular knight (position, color)
+
+*4 main pillars of OOP
+1) Encapsulation
+2) Abstraction
+3) Inheritance
+4) Polymorphism

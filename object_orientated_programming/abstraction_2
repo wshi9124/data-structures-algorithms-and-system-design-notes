@@ -1,0 +1,18 @@
+Abstraction- only showing essential details and keeping everything else hidden
+
+Ex: driving a car
+You only need to know how to use steering wheel and gas pedals
+You don't need to know how the car functions internally
+
+-Classes that are created should act like the car.
+Users of your classes should not worry about the inner data 
+
+-Because multiple programmers can work on the same project, 
+it is best if the section that you work on is able to function without knowledge of the inner workings of your colleague's section
+
+To achieve this it is best to think of your program in terms of interface and implementation
+1) Interface- refers to the way sections of your code can communicate with one another
+This typically is done through methods each class is able to access
+2) Implementation - implementation of these methods or how these methods are coded should be hidden within the class
+
+-Creating an Interface prevents entanglement (where one change creates a ripple effect that causes many more changes)
