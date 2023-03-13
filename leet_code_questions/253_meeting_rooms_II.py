@@ -38,10 +38,10 @@ def minMeetingRooms(self, intervals: List[List[int]]) -> int:
     while s < len(intervals):
         if start[s] < end[e]:
             count += 1
-            e += 1
+            s += 1
         else:
             count -= 1
-            s += 1
+            e += 1
         result = max(result, count)
     return result
     
