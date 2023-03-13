@@ -32,7 +32,18 @@ def conflictInfo(meetings):
         for j in range(i+1, n):
             s, e = times[j]
             t = 0
-
+            if start < s and e < end:
+                t = e - s
+            elif s < start and end < e:
+                t = end - start
+            elif start < s < end:
+                t = end - s
+            elif start < e < end:
+                t = e -start
+            if t:
+                mins = (t//60) * 60 + t % 60
+                conflicts += 1
+                totalMins += mins
 
     if conflicts:
         return "conflict", conflicts, totalMins
