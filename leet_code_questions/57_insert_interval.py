@@ -23,7 +23,8 @@ def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[Lis
         elif newInterval[0] > intervals[i][1]:
             result.append(intervals[i])
         else:
-            newInterval = [min(newInterval[0], intervals[i][0], max(newInterval[1], intervals[i][1]))]
+            newInterval = [min(newInterval[0], intervals[i][0]), 
+                            max(newInterval[1], intervals[i][1])]
     result.append(newInterval)
 
     return result
