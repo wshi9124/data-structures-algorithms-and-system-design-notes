@@ -26,7 +26,7 @@ public class AdditionalSyntax {
         String classname = income > 100000 ? "First" : "Economy";
         System.out.println(classname);
 
-
+        
         
     }
 }
