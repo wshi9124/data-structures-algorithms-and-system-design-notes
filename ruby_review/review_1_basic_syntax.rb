@@ -34,3 +34,7 @@ name = "String Interpolation"
 puts "This is #{name}"
 
 #nil(Ruby) and None(Python) are similar except for Ruby returns nil in situations and Python raises an exception
+
+=begin
+you can also comment using =begin and =end
+=end

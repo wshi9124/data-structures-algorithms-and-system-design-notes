@@ -28,3 +28,15 @@ while index <= 5
 end
 
 #guessing game using while loop
+secret_word = "basketball"
+guess= ""
+while guess != secret_word
+    puts "Enter Guess: "
+    guess = gets.chomp()
+    if guess == secret_word
+        puts "correct"
+    else
+        puts "incorrect try again"
+    end
+end
+
