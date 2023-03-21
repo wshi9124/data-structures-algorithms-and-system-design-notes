@@ -1,0 +1,27 @@
+Start new rails project (-d is preferred database, -T skip test files, --api only used for backend, --webpack used to preconfigure for JavaScript)
+-rails new project_name -d=postgresql -T --api
+--webpack=react 
+
+Install gems-
+uncomment gem "rack-cors"
+-bundle install
+
+Config -> Innitializer -> cors.rb -> uncomment 
+origins "localhost:4000" (specify which port for frontend server)
+
+Create React App/ install
+-npx create-react-app name
+-npm install
+
+Default port for frontend
+Add .env file
+-PORT=4000
+-npm start
+
+Start rails server
+-rails s 
+
+Create database
+-rails db:create
+
+
