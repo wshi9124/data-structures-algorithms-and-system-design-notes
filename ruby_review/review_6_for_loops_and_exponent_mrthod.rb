@@ -1,8 +1,12 @@
-food = ["pizz", "sushi", "chicken", "soup"]
+require 'pry'
+# gem install pry
+
+food = ["pizza", "sushi", "chicken", "soup"]
 
 # similar to python 
 for f in food
     puts f
+    binding.pry
 end
 
 food.each do |f|

@@ -18,13 +18,18 @@ class BookTour
         end
     end
 
+    def add_page
+        self.pages += 1
+    end
+
 end
 
 book1 = BookTour.new()
 book1.title = "Harry Potter"
 book1.author = "JK"
 book1.pages = 400
-puts book1.title
+book1.add_page
+puts book1.pages
 puts book1.long_book
 
 book2 = BookTour.new("Lord of the Rings", "JRR", 1000)
