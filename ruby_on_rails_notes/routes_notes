@@ -1,0 +1,12 @@
+Find routes
+rails routes | grep users
+  
+Syntax
+resources :user_events, only:[:show]
+resources :events
+resources :users
+
+custom routes
+http verb, url, controller#action
+post "/login", to: "sessions#create" 
+get '/cheeses/:id', to: 'cheeses#show'

@@ -1,0 +1,30 @@
+Migrate Database
+-rails db:migrate
+
+Edit database
+*Make sure table name is plural
+
+-rails g migration AddAgeToUsers
+
+add_column :table_name(:users),
+:column name (:age),
+:column_type (:integer)
+
+-rails g migration ChangeAgeInUsers
+
+change_column :users,
+:age, :string
+
+-rails g migration RemoveAgeFromUsers
+
+ remove_column :users,
+ :age
+
+Rollback Last Migration
+-rails db:rollback
+
+Seeds
+-rails db:seed
+u1= User.create!(username: "Willie", email:"wshi9124@gmail.com", favorite_number: 9, password: "123456")
+e1 = Event.create!(name:"Basketball Tournement", location:"NYC")
+UserEvent.create!(user_id: u1.id, event_id: e1.id, admin:true)

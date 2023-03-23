@@ -12,6 +12,7 @@ origins "localhost:4000" (specify which port for frontend server)
 Create React App/ install
 -npx create-react-app name
 -npm install
+-npm install react-router-dom
 
 Default port for frontend
 Add .env file
@@ -23,5 +24,9 @@ Start rails server
 
 Create database
 -rails db:create
+-rails g resource User username:string email:string favorite_number:integer password:string
+-rails g scaffold User username:string email:string favorite_number:integer password:string
+-rails g scaffold UserEvent user_id:integer event_id:integer admin:boolean
+*Name of table when generating has to be singular 
 
 

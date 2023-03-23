@@ -1,0 +1,5 @@
+Model: It manages the critical aspects of the application, such as communicating with the database via Active Record. It directly manages the data, logic and rules of the application. A model type typically represents a table in the application's database.
+
+Controller: the controller transmits data requests from the user to the model, and then delivers data that is rendered in the view to the user.
+
+View: In like manner the views should not contain any programming logic, they should simply render what the controller sends them. (Front End)
