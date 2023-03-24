@@ -1,0 +1,30 @@
+import ChatEvents from "./ChatEvents";
+<ChatEvents renderChatEvents={renderChatEvents}/>
+
+function ChatEvents({renderChatEvents}) 
+
+useState
+const [name, setName] = useState("")
+
+value={name}
+onChange={(e) => setName(e.target.value)}
+
+
+const handleLogin = (e) => {
+        e.preventDefault()
+        const createAccount = {
+            name,
+            email,
+            favorite_number: favoriteNumber,
+            password
+        }
+        fetch('http://localhost:3000/users', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Accepts: 'application/json',
+            },
+            body: JSON.stringify(createAccount),
+          })
+          .then(navigate("/home"))
+    }
