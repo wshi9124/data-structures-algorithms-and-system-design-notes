@@ -16,3 +16,26 @@ def rotate(self, matrix):
     :type matrix: List[List[int]]
     :rtype: None Do not return anything, modify matrix in-place instead.
     """
+    left = 0
+    right = len(matrix) - 1
+
+    while left < right:
+        top, bottom = left, right
+        for i in  range(right-left):
+            
+            #save topLeft
+            topLeft = matrix[top][left + i]
+
+            #move bottomLeft to topLeft
+            matrix[top][left + i] = matrix[bottom - i][left]
+
+            #move bottomRight to bottomLeft
+            matrix[bottom - i][left] = matrix[bottom][right - i]
+
+            #move topRight to bottomRight
+            matrix[bottom][right - i] = matrix[top + i][right]    
+
+            #move topLeft to topRight
+            matrix[top + i][right] = topLeft
+        left += 1
+        right -= 1
