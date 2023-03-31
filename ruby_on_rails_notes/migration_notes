@@ -25,6 +25,6 @@ Rollback Last Migration
 
 Seeds
 -rails db:seed
-u1= User.create!(username: "Willie", email:"wshi9124@gmail.com", favorite_number: 9, password: "123456")
+u1= User.create!(name: "Willie", email:"wshi9124@gmail.com", favorite_number: 9, password: "123456")
 e1 = Event.create!(name:"Basketball Tournement", location:"NYC")
 UserEvent.create!(user_id: u1.id, event_id: e1.id, admin:true)
