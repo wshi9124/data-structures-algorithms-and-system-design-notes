@@ -26,3 +26,11 @@ lRUCache.get(3);    // return 3
 lRUCache.get(4);    // return 4
 """
 
+class Node:
+    def __init__(self, key, val):
+        self.key, self.val = key, val
+        self.prev = self.next = None
+
+class LRUCache:
+
+    def __init__(self, capacity: int):
