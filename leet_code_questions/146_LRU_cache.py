@@ -39,5 +39,15 @@ class LRUCache:
 
         #Left is least recently used, Right is most recently used 
         self.left, self.right = Node(0,0), Node(0,0)
-        self.left.next, self.right.next = self.right, self.left
-        
+        #connect nodes with each other 
+        self.left.next, self.right.prev = self.right, self.left
+    
+    def remove(self, node):
+        prev, nxt = node.prev, node.next
+
+    def insert(self, node):
+    
+    def get(self, key):
+
+    def put(self, key, value):
+    
