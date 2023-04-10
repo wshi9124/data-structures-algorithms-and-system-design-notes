@@ -21,9 +21,17 @@ def isSameTree(self, p, q):
     :type q: TreeNode
     :rtype: bool
     """
+    # if not p and not q:
+    #     return True
+    # elif p and q and p.val == q.val:
+    #     return self.isSameTree(p.left, q.left) and self.isSameTree(p.right,q.right)
+    # else:
+    #     return False 
+
     if not p and not q:
         return True
-    elif p and q and p.val == q.val:
-        return self.isSameTree(p.left, q.left) and self.isSameTree(p.right,q.right)
-    else:
-        return False 
+    
+    if not p or not q or p.val != q.val:
+        return False
+    
+    return (self.isSameTree(p.left, q.left)) and (self.isSameTree(p.right, q.right))
