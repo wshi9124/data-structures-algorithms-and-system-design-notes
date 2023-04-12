@@ -14,3 +14,18 @@ Output: 1
 """
 
 def diameterOfBinaryTree(self, root):
+    #global variable
+    result = [0]
+
+    def dfs(root):
+        if not root:
+            return -1
+        left = dfs(root.left)
+        right = dfs(root.right)
+        # +2 because end of node is -1
+        result[0] = max(result[0], 2 + left + right)
+
+        return 1 + max(left, right)
+    
+    dfs(root)
+    return result[0]
