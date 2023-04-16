@@ -28,4 +28,5 @@ def lowestCommonAncestor(self, root, p, q):
     Time complexity= O(log n)
     Space complexity= O(1) 
     """
+    curr = root
     
