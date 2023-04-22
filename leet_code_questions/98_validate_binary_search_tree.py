@@ -17,23 +17,20 @@ Output: false
 Explanation: The root node's value is 5 but its right child's value is 4.
 """
 
-def isValidBST(root):
+def isValidBST(self, root):
     """
     :type root: TreeNode
     :rtype: bool
     recursive function
     Both time complexity and space complexity is O(n)
     """
-    def valid_using_dfs(node, left, right):
-        #its still valid if its empty tree
+    def valid(node, left, right):
         if not node:
-            return True 
-
-        if not (node.val > left and node.val < right):
-            return False 
+            return True
         
-        if valid_using_dfs(node.left, left, node.val) == True and valid_using_dfs(node.right, node.val, right) == True:
-            return True 
+        if not (node.val < right and node.val > left):
+            return False
+        
+        return valid(node.left, left, node.val) and valid(node.right, node.val, right)
     
-    valid_using_dfs(root, float("-inf"), float("inf"))
-    
+    return valid(root, float("-inf"), float("inf"))
