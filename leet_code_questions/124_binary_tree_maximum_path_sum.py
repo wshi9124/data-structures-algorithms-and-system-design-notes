@@ -14,4 +14,24 @@ Output: 42
 Explanation: The optimal path is 15 -> 20 -> 7 with a path sum of 15 + 20 + 7 = 42.
 """
 def maxPathSum(self, root):
-    result = [root]
+    result = [root.val]
+
+    #return max path sum without split 
+    def dfs(root):
+        if not root:
+            return 0
+        
+        leftMax = dfs(root.left)
+        rightMax = dfs(root.right)
+        #need 0 just in case value is negative
+        leftMax = max(leftMax, 0)
+        rightMax = max(rightMax, 0)
+        #compute max path sum with split
+        result[0] = max(result[0], root.val + leftMax + rightMax)
+
+        return root.val + max(leftMax, rightMax)
+    dfs(root)
+    return result[0]
+
+
+
