@@ -25,35 +25,62 @@ trie.search("app");     // return True
 
 class TrieNode:
     def __init__(self):
-        self.children = {}
-        self.endOfWord = False
-
+        # self.children = {}
+        # self.endOfWord = False
+        self.children = [None] * 26
+        self.end = False
+    
 class Trie:
     def __init__(self):
+        # self.root = TrieNode()
         self.root = TrieNode()
     
     def insert(self, word):
+        # curr = self.root
+        # for c in word:
+        #     if c not in curr.children:
+        #         curr.children[c] = TrieNode()
+        #     curr = curr.children[c]
+        # curr.endOfWord = True
+
         curr = self.root
         for c in word:
-            if c not in curr.children:
-                curr.children[c] = TrieNode()
-            curr = curr.children[c]
-        curr.endOfWord = True
+            i = ord(c) - ord("a")
+            if curr.children[i] == None:
+                curr.children[i] = TrieNode()
+            curr = curr.children[i]
+        curr.end = True
     
     def search(self, word):
+        # curr = self.root
+        # for c in word:
+        #     if c not in curr.children:
+        #         return False
+        #     curr = curr.children[c]
+        # return curr.endOfWord
+
         curr = self.root
         for c in word:
-            if c not in curr.children:
+            i = ord(c) - ord("a")
+            if curr.children[i] == None:
                 return False
-            curr = curr.children[c]
-        return curr.endOfWord
+            curr = curr.children[i]
+        return curr.end
     
     def startsWith(self, prefix):
+        # curr = self.root
+        # for c in prefix:
+        #     if c not in curr.children:
+        #         return False
+        #     curr = curr.children[c]
+        # return True
+
         curr = self.root
         for c in prefix:
-            if c not in curr.children:
+            i = ord(c) - ord("a")
+            if curr.children[i] == None:
                 return False
-            curr = curr.children[c]
+            curr = curr.children[i]
         return True
 
 
