@@ -20,4 +20,27 @@ Example 3:
 Input: candidates = [2], target = 1
 Output: []
 """
+def combinationSum(self, candidates, target):
+    result = []
 
+    # i is which of the canidates we are allowed to choose
+    # curr is list of which values we have added so far
+    def dfs(i, curr, total):
+        if total == target:
+            # since we are only maintaining a single variable list for curr we 
+            # want to create a copy of it becasue we want to continue to use curr variable
+            result.append(curr.copy())
+            return
+        
+        if i == len(candidates) or total > target:
+            return
+
+        curr.append(candidates[i])
+        dfs(i, curr, total + candidates[i])
+        curr.pop()
+        dfs(i + 1, curr, total) 
+    
+    dfs(0, [], 0)
+    return result
+
+        
