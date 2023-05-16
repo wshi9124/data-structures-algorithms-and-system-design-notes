@@ -22,4 +22,26 @@ Output:
 ]
 """
 def combinationSum2(self, candidates, target):
-    
+    candidates.sort()
+    result = []
+
+    def backTrack(curr, position, target):
+        if target == 0:
+            result.append(curr.copy())
+        if target < 0:
+            return
+        
+        prev = -1
+        for i in range(position, len(candidates)):
+            if candidates[i] == prev:
+                continue
+            curr.append(candidates[i])
+            backTrack(curr, i + 1, target - candidates[i])
+            curr.pop()
+
+            prev = candidates[i]
+        
+    backTrack([], 0, target)
+    return result
+
+        
