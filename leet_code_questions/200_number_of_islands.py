@@ -22,6 +22,9 @@ Output: 3
 """
 
 def numIslands(self, grid):
+    if not grid:
+        return 0
+        
     count = 0
 
     for i in range(len(grid)):
