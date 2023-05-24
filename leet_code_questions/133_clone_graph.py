@@ -33,3 +33,18 @@ Output: []
 Explanation: This an empty graph, it does not have any nodes.
 """
 def cloneGraph(self, node):
+    oldToNew = {}
+
+    def dfsOrClone(node):
+        if node in oldToNew:
+            return oldToNew[node]
+        
+        copy = Node(node.val)
+        oldToNew[node] = copy
+
+        for nei in node.neighbors:
+            copy.neighbors.append(dfsOrClone(nei))
+        
+        return copy
+    
+    return dfsOrClone(node) if node else None
