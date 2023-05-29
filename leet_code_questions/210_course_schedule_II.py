@@ -18,3 +18,39 @@ Example 3:
 Input: numCourses = 1, prerequisites = []
 Output: [0]
 """
+def findOrder(self, numCourses, prerequisites):
+    preMap = {c:[] for c in range(numCourses)}
+
+    for crs, pre in prerequisites:
+        preMap[crs].append(pre)
+    
+    # a course has 3 possible states
+    # 1) visited -> crs has been added to output
+    # 2) visiting -> crs not added to output, but added to cycle
+    # 3) unvisited -> crs not added to output or cycle
+
+    result = []
+    visit, cycle = set(), set()
+
+    def dfs(crs):
+        if crs in cycle:
+            return False
+        if crs in visit:
+            return True
+        
+        cycle.add(crs)
+
+        for pre in preMap[crs]:
+            if not dfs(pre): return False
+        
+        cycle.remove(crs)
+        visit.add(crs)
+        result.append(crs)
+        return True
+    
+    for c in range(numCourses):
+        if not dfs(c):
+            return []
+    
+    return result
+        
