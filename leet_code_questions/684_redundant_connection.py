@@ -11,3 +11,40 @@ Example 2:
 Input: edges = [[1,2],[2,3],[3,4],[1,4],[1,5]]
 Output: [1,4]
 """
+def findRedundantConnection(self, edges):
+     # theres O(n**2) solution
+    # theres also O(n) solution using union find
+
+    # 0th node will not be used, but makes math easier
+    parent = [i for i in range(len(edges) + 1)]
+    rank = [1] * (len(edges) + 1)
+
+    def find(n):
+        p = parent[n]
+
+        # we are trying to find the root parent 
+        while p != parent[p]:
+            parent[p] = parent[parent[p]]
+            p = parent[p]
+        return p
+        
+
+    def union(n1, n2):
+        p1, p2 = find(n1), find(n2)
+
+        #return False because p1 and p2 already merged
+        if p1 == p2:
+            return False
+        
+        if rank[p1] > rank[p2]:
+            parent[p2] = p1
+            rank[p2] += rank[p1]
+        else:
+            parent[p1] = p2
+            rank[p1] += rank[p2]
+        return True
+    
+    for n1, n2 in edges:
+        if not union(n1,n2):
+            return [n1, n2]
+        
