@@ -41,4 +41,38 @@ def ladderLength(self, beginWord, endWord, wordList):
                     q.append((newWord, level + 1))
                     visit.add(newWord)
     return 0
-                    
+
+    # #BFS
+    # #n**2 * m time complexity
+
+    # if endWord not in wordList:
+    #     return 0
+
+    # # dictionary where if you insert a new value for the first time, the default value will be an empty list (adjacentcy list)
+    # nei = collections.defaultdict(list)
+    # wordList.append(beginWord)
+
+    # for word in wordList:
+    #     for j in range(len(word)):
+    #         pattern = word[:j] + "*" + word[j+1:]
+    #         nei[pattern].append(word)
+        
+
+    # visit = set([beginWord])
+    # q = collections.deque([beginWord])
+
+    # result = 1
+    # while q:
+    #     for i in range(len(q)):
+    #         word = q.popleft()
+    #         if word == endWord:
+    #             return result
+    #         for j in range(len(word)):
+    #             pattern = word[:j] + "*" + word[j+1:]
+    #             for neiWord in nei[pattern]:
+    #                 if neiWord not in visit:
+    #                     visit.add(neiWord)
+    #                     q.append(neiWord)
+    #     result += 1
+    # return 0
+                
