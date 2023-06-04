@@ -14,3 +14,36 @@ Input: tickets = [["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL"
 Output: ["JFK","ATL","JFK","SFO","ATL","SFO"]
 Explanation: Another possible reconstruction is ["JFK","SFO","ATL","JFK","ATL","SFO"] but it is larger in lexical order.
 """
+def findItinerary(self, tickets):
+    # len(result) is always going to be len(tickets) + 1
+    adj = {src:[] for src, des in tickets}
+
+    tickets.sort()
+
+    for src, des in tickets:
+        adj[src].append(des)
+    
+    result = ["JFK"]
+    def dfs(src):
+        if len(result) == len(tickets) + 1:
+            return True
+        if src not in adj:
+            return False
+        
+        # temp = list(adj[src])
+        # we don't want to update a list while we iterate through it, so, we make a copy first
+        for i, v in enumerate(adj[src]):
+            adj[src].pop(i)
+            result.append(v)
+
+            if dfs(v): return True
+            # now we backtrack 
+            adj[src].insert(i,v)
+            result.pop()
+        
+        return False
+    dfs("JFK")
+    return result
+
+
+
