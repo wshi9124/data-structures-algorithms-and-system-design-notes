@@ -21,6 +21,33 @@ def minCostConnectPoints(self, points):
     # O(n**2logn) minHeap
     # we want to connect every point together without forming a cycle (n-1) edges
 
-    
+    n = len(points)
 
+    adj = {i:[] for i in range(n)} # i : list of [cost, node]
+
+    for i in range(n):
+        x1, y1 = points[i]
+        for j in range(i+1, n):
+            x2, y2 = points[j]
+            distance = abs(x1-x2) + abs(y1-y2)
+            adj[i].append([distance, j])
+            adj[j].append([distance, i])
     
+    #prims algorithm
+    result = 0
+    visit = set()
+    minHeap = [[0,0]] #[cost,point]
+
+    while len(visit) < n:
+        cost, i  = heapq.heappop(minHeap)
+        if i in visit:
+            continue
+        result += cost
+        visit.add(i)
+        for neiCost, nei in adj[i]:
+            if nei not in visit:
+                heapq.heappush(minHeap, [neiCost, nei])
+    return result
+
+
+
