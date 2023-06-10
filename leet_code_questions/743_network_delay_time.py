@@ -16,4 +16,26 @@ Output: -1
 """
 
 def networkDelayTime(self, times, n, k):
+    #dijkstra's algorithm
+    # used for finding the shortest distance from starting node to target node in a weighted graph 
+    # O(E * logV)
+    #BFS and minHeap
     
+    edges = {i:[] for i in range(1,n+1)}
+
+    for u,v,w in times:
+        edges[u].append((v,w))
+    
+    time = 0
+    minHeap = [(0,k)]
+    visit = set()
+
+    while minHeap:
+        w1, n1 = heapq.heappop(minHeap)
+        if n1 in visit:
+            continue
+        visit.add(n1)
+        time = w1
+        for n2, w2 in edges[n1]:
+            heapq.heappush(minHeap, (w1+w2, n2))
+    return time if len(visit) == n else -1
