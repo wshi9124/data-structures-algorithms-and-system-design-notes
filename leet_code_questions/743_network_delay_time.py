@@ -15,3 +15,5 @@ Input: times = [[1,2,1]], n = 2, k = 2
 Output: -1
 """
 
+def networkDelayTime(self, times, n, k):
+    
