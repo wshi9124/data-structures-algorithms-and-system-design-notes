@@ -16,3 +16,4 @@ Input: s = "eccbbbbdec"
 Output: [10]
 """
 
+def partitionLabels(self, s):
