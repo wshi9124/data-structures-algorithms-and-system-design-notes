@@ -31,6 +31,11 @@ def minCostClimbingStairs(cost):
     time complexity O(n)
     space complexity O(1)
     """
-    for step in range(2,len(cost)):
-        cost[step] = cost[step] + min(cost[step-1], cost[step-2])
-    return min(cost[-1], cost[-2])
+    # for step in range(2,len(cost)):
+    #     cost[step] = cost[step] + min(cost[step-1], cost[step-2])
+    # return min(cost[-1], cost[-2])
+
+    # reach to beginning decrementing by 1
+    for i in range(len(cost) - 3, -1, -1):
+        cost[i] = min(cost[i] + cost[i + 1], cost[i] + cost[i + 2])
+    return min(cost[0], cost[1])
