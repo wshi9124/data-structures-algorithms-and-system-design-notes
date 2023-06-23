@@ -35,5 +35,3 @@ def climbStairs(n):
         two = temp
 
     return one 
-
-print(climbStairs(5))
