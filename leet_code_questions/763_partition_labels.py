@@ -18,21 +18,23 @@ Output: [10]
 
 def partitionLabels(self, s):
     count = {}
-    res = []
-    i, length = 0, len(S)
-    for j in range(length):
-        c = S[j]
-        count[c] = j
+    result = []
+    index, length = 0, len(s)
 
-    curLen = 0
+    for i in range(length):
+        count[s[i]] = i
+
+    currLen = 0
     goal = 0
-    while i < length:
-        c = S[i]
-        goal = max(goal, count[c])
-        curLen += 1
 
-        if goal == i:
-            res.append(curLen)
-            curLen = 0
-        i += 1
-    return res
+    while index < len(s):
+        goal = max(goal, count[s[index]])
+        currLen += 1
+
+        if goal == index:
+            result.append(currLen)
+            currLen = 0
+        
+        index += 1
+    return result
+
