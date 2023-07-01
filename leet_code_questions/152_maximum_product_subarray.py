@@ -12,3 +12,17 @@ Input: nums = [-2,0,-1]
 Output: 0
 Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
 """
+
+def maxProduct(self, nums):
+    #dynamic programming 
+    
+    result = nums[0]
+
+    currMax, currMin = 1, 1
+
+    for n in nums:
+        temp = currMax
+        currMax = max(currMax * n, currMin * n, n)
+        currMin = min(temp * n, currMin * n, n)
+        result = max(result, currMax)
+    return result
