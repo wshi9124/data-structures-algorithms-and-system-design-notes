@@ -28,4 +28,4 @@ Explanation: We do not need any operations since the initial s already equals ta
 """
 
 def minFlips(self, target: str) -> int:
-    a
+    

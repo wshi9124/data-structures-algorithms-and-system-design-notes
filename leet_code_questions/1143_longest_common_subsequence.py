@@ -19,3 +19,4 @@ Input: text1 = "abc", text2 = "def"
 Output: 0
 Explanation: There is no such common subsequence, so the result is 0.
 """
+def longestCommonSubsequence(self, text1: str, text2: str) -> int:
