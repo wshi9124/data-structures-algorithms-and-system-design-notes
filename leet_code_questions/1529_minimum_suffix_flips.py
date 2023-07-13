@@ -30,7 +30,12 @@ Explanation: We do not need any operations since the initial s already equals ta
 def minFlips(self, target: str) -> int:
     flips = 0
 
+    # 0 will become 1 and 1 will become 0 after each move
+	# but the substring before current index in unchanged so traverse from left to right
+
     for letter in target:
+        # we can find the current bit of string using flips%2 because we increment flips once a bit changes.
+		# if the current bit not equal to the expected bit we need to flip the string
         if int(letter) != flips%2:
             flips += 1
     
