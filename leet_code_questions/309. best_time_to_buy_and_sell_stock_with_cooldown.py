@@ -15,3 +15,5 @@ Output: 0
 """
 
 def maxProfit(self, prices):
+    #caching using hashmap
+    dp = {} 
