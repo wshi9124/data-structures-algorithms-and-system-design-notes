@@ -19,6 +19,8 @@ def maxProfit(self, prices):
     # If Buy -> i + 1
     # If Sell -> i + 2
 
+    #time and memory complexity = O(n)
+
     #caching using hashmap
     dp = {} 
 
