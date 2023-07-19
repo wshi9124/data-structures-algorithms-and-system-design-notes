@@ -15,5 +15,9 @@ Output: 0
 """
 
 def maxProfit(self, prices):
+    # State: buying or selling
+    # If Buy -> i + 1
+    # If Sell -> i + 2
+
     #caching using hashmap
     dp = {} 
