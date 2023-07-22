@@ -32,6 +32,10 @@ def singleNumber(self, nums):
     #     if hashmap[key] == 1:
     #         return key
 
+    #O(1) memory solution
+    # XOR or exclusive or
+    # ex: 0 ^ 0 = 0, 1 ^ 0 = 1
+    # if 2 numbers are same you get 0 if they are different you add the 2 numbers up 
     result = 0
 
     for n in nums:
