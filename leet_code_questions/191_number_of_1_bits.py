@@ -20,6 +20,7 @@ Input: n = 11111111111111111111111111111101
 Output: 31
 Explanation: The input binary string 11111111111111111111111111111101 has a total of thirty one '1' bits.
 """
+# bit manipulation 
 
 def hammingWeight(self, n: int) -> int:
     #time complexity is O(32) because n is guarentee to be 32 bit integer
@@ -46,4 +47,3 @@ def hammingWeight(self, n: int) -> int:
         n = n & (n - 1)
 
     return result 
-    
