@@ -20,3 +20,28 @@ Explanation:
 4 --> 100
 5 --> 101
 """
+
+def countBits(self, n):
+    # O(n log n)
+
+    result  = [0] * (n + 1)
+
+    for i in range(1, n + 1):
+        n = i
+        while n > 0:
+            result[i] += 1
+            n = n & (n - 1)
+            # result[i] += n%2
+            # n = n  >> 1
+    
+    return result
+
+    # O(n) time
+    dp = [0] * (n + 1)
+    offset = 1
+
+    for i in range(1, n + 1):
+        if offset * 2 == i:
+            offset = i
+        dp[i] = 1 + dp[i - offset]
+    return dp
