@@ -17,3 +17,10 @@ Explanation: The input binary string 11111111111111111111111111111101 represents
 """
 
 def reverseBits(self, n: int) -> int:
+    result = 0
+
+    for i in range(32):
+        bit = (n >> i) & 1
+        result += (bit << (31-i))
+
+    return result 
