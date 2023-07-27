@@ -29,4 +29,11 @@ def missingNumber(self, nums):
         if n not in numbers:
             return n
     
+    # O(n) time complexity, but O(1) space complexity
 
+    result = len(nums)
+
+    for i in range(len(nums)):
+        result += (i - nums[i])
+    
+    return result 
