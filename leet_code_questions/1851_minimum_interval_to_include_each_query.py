@@ -24,5 +24,5 @@ Explanation: The queries are processed as follows:
 - Query = 22: The interval [20,25] is the smallest interval containing 22. The answer is 25 - 20 + 1 = 6. 
 """
 
-def minInterval(self, intervals: List[List[int]], queries: List[int]) -> List[int]:
+def minInterval(self, intervals, queries):
 
