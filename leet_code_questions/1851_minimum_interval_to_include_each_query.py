@@ -25,4 +25,9 @@ Explanation: The queries are processed as follows:
 """
 
 def minInterval(self, intervals, queries):
-    
+    intervals.sort()
+
+    for q in sorted(queries)
+
+
+s
