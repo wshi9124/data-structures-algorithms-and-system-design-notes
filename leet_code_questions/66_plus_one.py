@@ -27,6 +27,7 @@ Thus, the result should be [1,0].
 def plusOne(self, digits):
     # O(n) time complexity and O(1) space complxity
 
+    #reverse integer array
     digits= digits[::-1]
 
     carry, i = 1, 0
