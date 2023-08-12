@@ -33,3 +33,4 @@ def minInterval(self, intervals, queries):
 
     for q in sorted(queries):
         
+        
