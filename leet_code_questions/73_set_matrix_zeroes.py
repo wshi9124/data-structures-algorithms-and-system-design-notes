@@ -33,4 +33,4 @@ def setZeroes(self, matrix):
             if matrix[0][c] == 0 or matrix[r][0] == 0:
                 
 
-sca
+sc
