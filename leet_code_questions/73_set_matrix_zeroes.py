@@ -32,5 +32,3 @@ def setZeroes(self, matrix):
         for c in range(cols):
             if matrix[0][c] == 0 or matrix[r][0] == 0:
                 
-
-sc
