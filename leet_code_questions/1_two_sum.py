@@ -59,3 +59,4 @@ def two_sum_better_way(nums, target):
 numbers = [1,5,7,9,213,3214]
 target_number= 214
 print(two_sum_better_way(numbers, target_number))
+
