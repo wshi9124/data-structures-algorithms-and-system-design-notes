@@ -60,3 +60,12 @@ numbers = [1,5,7,9,213,3214]
 target_number= 214
 print(two_sum_better_way(numbers, target_number))
 
+def updatedTwoSum(self, nums, target):
+    prevNums = {} #value and index
+
+    for i, n in enumerate(nums):
+        difference = target - n
+        if difference in prevNums:
+            return [i, prevNums[difference]]
+        prevNums[n] = i 
+
