@@ -20,14 +20,25 @@ def groupAnagrams(self, strs):
     :type strs: List[str]
     :rtype: List[List[str]]
     """
-    dic = {}
-    for word in strs:
-        sotrted_word = "".join(sorted(word))
+    # dic = {}
+    # for word in strs:
+    #     sotrted_word = "".join(sorted(word))
 
-        if sotrted_word not in dic:
-            dic[sotrted_word] = [word]
+    #     if sotrted_word not in dic:
+    #         dic[sotrted_word] = [word]
+    #     else:
+    #         dic[sotrted_word] += [word]
+    
+    # return dic.values() 
+
+    hashmap = {}
+
+    for word in strs:
+        sortedWord = "".join(sorted(word))
+
+        if sortedWord not in hashmap:
+            hashmap[sortedWord] = [word]
         else:
-            dic[sotrted_word] += [word]
-    
-    return dic.values() 
-    
+            hashmap[sortedWord] += [word]
+        
+    return hashmap.values()
