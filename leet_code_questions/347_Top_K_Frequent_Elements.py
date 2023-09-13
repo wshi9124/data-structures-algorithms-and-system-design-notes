@@ -22,20 +22,37 @@ def topKFrequent(self, nums, k):
     :rtype: List[int]
     * bucket sort
     """
-    hashmap = {}
-    freq = [[] for i in range(len(nums)+1)]
+    # hashmap = {}
+    # freq = [[] for i in range(len(nums)+1)]
 
-    for num in nums:
-        hashmap[num] = 1 + hashmap.get(num, 0)
-    for number, count in hashmap.items():
-        freq[count].append(number)
-    # [[], [3], [2], [1], [], [], []]
+    # for num in nums:
+    #     hashmap[num] = 1 + hashmap.get(num, 0)
+    # for number, count in hashmap.items():
+    #     freq[count].append(number)
+    # # [[], [3], [2], [1], [], [], []]
     
-    result = []
+    # result = []
 
+    # for i in range(len(freq)-1, 0, -1):
+    #     for num in freq[i]:
+    #         result.append[num]
+    #         if len(result) == k:
+    #             return result
+
+    hashmap = {}
+    freq = [[] for i in range(len(nums) + 1)]
+
+    for n in nums:
+        hashmap[n] = 1 + hashmap.get(n, 0)
+    for n, c in hashmap.items():
+        freq[c].append(n)
+        # freq[c] += [n]
+
+    result = []
     for i in range(len(freq)-1, 0, -1):
-        for num in freq[i]:
-            result.append[num]
-            if len(result) == k:
-                return result
+        for n in freq[i]:
+            result.append(n)
+        if len(result) == k:
+            return result
+
     
