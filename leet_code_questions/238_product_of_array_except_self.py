@@ -23,6 +23,8 @@ def productExceptSelf(self, nums):
     :type nums: List[int]
     :rtype: List[int]
     """     
+    # O(n) time
+    # O(1) space complexity
     result = [1] * len(nums)
 
     prefix = 1
@@ -38,3 +40,5 @@ def productExceptSelf(self, nums):
         postfix *= nums[i]
     
     return result
+
+
