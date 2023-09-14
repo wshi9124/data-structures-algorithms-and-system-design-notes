@@ -60,3 +60,5 @@ def isValidSudoku(self, board):
             square.add(s)
     return True
         
+
+        
