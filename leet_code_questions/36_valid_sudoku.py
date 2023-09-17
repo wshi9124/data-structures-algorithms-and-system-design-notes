@@ -44,20 +44,38 @@ def isValidSudoku(self, board):
     :rtype: bool
     """
 
-    row, column, square = set(), set(), set()
+    # row, column, square = set(), set(), set()
+
+    # for i in range(9):
+    #     for j in range(9):
+    #         if board[i][j] == ".":
+    #             continue
+    #         r = (i, board[i][j])
+    #         c = (j, board[i][j])
+    #         s = (i//3, j//3, board[i][j])
+    #         if r in row or c in column or s in square:
+    #             return False
+    #         row.add(r)
+    #         column.add(c)
+    #         square.add(s)
+    # return True
+
+    row, col, grid = set(), set(), set()
 
     for i in range(9):
         for j in range(9):
             if board[i][j] == ".":
                 continue
             r = (i, board[i][j])
-            c = (c, board[i][j])
-            s = (i//3, j//3, board[i][j])
-            if r in row or c in column or s in square:
+            c = (j, board[i][j])
+            g = (i//3, j//3, board[i][j])
+
+            if r in row or c in col or g in grid:
                 return False
             row.add(r)
-            column.add(c)
-            square.add(s)
+            col.add(c)
+            grid.add(g)
     return True
+
         
 
