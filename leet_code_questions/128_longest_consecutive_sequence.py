@@ -18,18 +18,29 @@ def longestConsecutive(self, nums):
     :type nums: List[int]
     :rtype:
     """
-    numSet = set(nums)
+    # numSet = set(nums)
+    # longest = 0
+
+    # for n in numSet:
+    #     if n - 1 not in numSet:
+    #         current_number = n
+    #         current_length = 1
+    #         while current_number + 1 in numSet:
+    #             current_length += 1
+    #             current_number += 1
+    #             longest = max(longest, current_length)
+    # return longest
+
+    numbers = set(nums)
     longest = 0
 
-    for n in numSet:
-        if n - 1 not in numSet:
-            current_number = n
-            current_length = 1
-            while current_number + 1 in numSet:
-                current_length += 1
-                current_number += 1
-                longest = max(longest, current_length)
+    for n in nums:
+        if (n - 1) not in numbers:
+            length = 1
+            while (n + length) in numbers:
+                length += 1
+            longest = max(longest, length)
+    
     return longest
 
-    
 
