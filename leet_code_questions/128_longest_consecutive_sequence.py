@@ -31,3 +31,5 @@ def longestConsecutive(self, nums):
                 longest = max(longest, current_length)
     return longest
 
+    
+
