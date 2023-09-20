@@ -14,21 +14,55 @@ Input: height = [1,1]
 Output: 1
 """
 
-def maxarea(height):
+def maxarea(self, height):
     """
     :type height: List[int]
     :rtype: int
     """
-    left = 0
-    right = len(height) -1 
-    max_area = 0
+    # left = 0
+    # right = len(height) -1 
+    # max_area = 0
 
-    while left < right:
-        width = right - left
-        area = width * min(height[left], height[right])
-        max_area = max(max_area, area)
-        if height[right] > height[left]:
-            left +=1
+    # while left < right:
+    #     width = right - left
+    #     area = width * min(height[left], height[right])
+    #     max_area = max(max_area, area)
+    #     if height[right] > height[left]:
+    #         left +=1
+    #     else:
+    #         right-=1
+    # return max_area
+
+    # l = 0
+    # r = len(height) - 1
+    # maxArea = 0
+
+    # while l < r:
+    #     width = r - l
+    #     area = min(height[l], height[r]) * width
+    #     maxArea = max(maxArea, area)
+    #     if height[l] < height[r]:
+    #         l += 1
+    #     else:
+    #         r -= 1
+    # return maxArea
+
+    l = 0
+    r = len(height) - 1
+    volume = 0
+
+    maxLeft = height[l]
+    maxRight = height[r]
+    
+    while l < r:
+        if maxLeft < maxRight:
+            l += 1
+            maxLeft = max(maxLeft, height[l])
+            volume += maxLeft - height[l]
         else:
-            right-=1
-    return max_area
+            r -= 1
+            maxRight = max(maxRight, height[r])
+            volume += maxRight - height[r]
+    return volume
+
+
