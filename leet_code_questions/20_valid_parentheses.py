@@ -25,19 +25,31 @@ def isValid(s):
     :rtype: bool
     """
 
+    # stack = []
+    # hashP = {')':'(', '}':'{', ']':'['}
+
+    # for character in s:
+    #     if character in hashP:
+    #         if stack and stack[-1] == hashP[character]:
+    #             stack.pop()
+    #         else:
+    #             return False
+    #     else:
+    #         stack.append(character)
+
+    # if not stack:
+    #     return True
+    # else: 
+    #     return False
+
     stack = []
-    hashP = {')':'(', '}':'{', ']':'['}
+    hashmap = {"}":"{", "]":"[", ")":"("}
 
-    for character in s:
-        if character in hashP:
-            if stack and stack[-1] == hashP[character]:
-                stack.pop()
-            else:
-                return False
-        else:
-            stack.append(character)
-
-    if not stack:
-        return True
-    else: 
-        return False
+    for c in s:
+        if c not in hashmap:
+            stack.append(c)
+            continue
+        if not stack or stack[-1] != hashmap[c]:
+            return False
+        stack.pop()
+    return not stack  
