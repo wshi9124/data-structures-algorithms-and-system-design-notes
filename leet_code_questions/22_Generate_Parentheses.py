@@ -21,21 +21,34 @@ def generateParenthesis(self, n):
     only valid if open == close == n
     """
 
-    stack = []
+    # stack = []
+    # result = []
+
+    # def backTrack(openN, closeN):
+    #     if openN == closeN == n:
+    #         result.append("".join(stack))
+        
+    #     if openN < n:
+    #         stack.append("(")
+    #         backTrack(openN + 1, closeN)
+    #         stack.pop()
+    #     if closeN < openN:
+    #         stack.append(")")
+    #         backTrack(openN + closeN + 1)
+    #         stack.pop()
+    
+    # backTrack(0,0)
+    # return result
+
     result = []
 
-    def backTrack(openN, closeN):
-        if openN == closeN == n:
-            result.append("".join(stack))
-        
+    def backTracking(currString, openN, closeN):
+        if len(currString) == 2*n:
+            result.append(currString)
+            return
         if openN < n:
-            stack.append("(")
-            backTrack(openN + 1, closeN)
-            stack.pop()
+            backTracking(currString + "(", openN + 1, closeN)
         if closeN < openN:
-            stack.append(")")
-            backTrack(openN + closeN + 1)
-            stack.pop()
-    
-    backTrack(0,0)
+            backTracking(currString + ")", openN, closeN + 1)
+    backTracking("",0,0)
     return result
