@@ -15,12 +15,23 @@ Output: [1,1,0]
 """
 
 def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+    # result = [0] * len(temperatures)
+    # stack = [] #[[temperature, index]]
+
+    # for i, t in enumerate(temperatures):
+    #     while stack and t > stack[-1][0]:
+    #         stackTemp, stackInd = stack.pop()
+    #         result[stackInd] = (i - stackInd)
+    #     stack.append([t,i])
+    # return result
+
     result = [0] * len(temperatures)
-    stack = [] #[[temperature, index]]
+
+    stack = []
 
     for i, t in enumerate(temperatures):
         while stack and t > stack[-1][0]:
-            stackTemp, stackInd = stack.pop()
-            result[stackInd] = (i - stackInd)
-        stack.append([t,i])
+            temperature, index = stack.pop() 
+            result[index] = i - index
+        stack.append([t, i])
     return result
