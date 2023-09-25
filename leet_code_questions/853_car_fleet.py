@@ -35,15 +35,30 @@ def carFleet(self, target, position, speed):
     :type speed: List[int]
     :rtype: int
     """
+    # pair = []
+    # for i in range(len(position)):
+    #     pair.append([position[i], speed[i]])
+    
+    # pair.sort(reverse=True)
+    # stack = []
+    # for p,s in pair:
+    #     stack.append((target-p)/s)
+    #     if stack >= 2 and stack[-1] >= stack[-2]:
+    #         stack.pop()
+    # return len(stack)
+
     pair = []
+    
     for i in range(len(position)):
         pair.append([position[i], speed[i]])
     
     pair.sort(reverse=True)
+
     stack = []
-    for p,s in pair:
-        stack.append((target-p)/s)
-        if stack >= 2 and stack[-1] >= stack[-2]:
+
+    for p, s in pair:
+        time_to_target = (target - p) / s
+        stack.append(time_to_target)
+        if len(stack) > 1 and stack[-1] <= stack[-2]:
             stack.pop()
     return len(stack)
-        
