@@ -20,34 +20,34 @@ def searchMatrix(self, matrix, target):
     :rtype: bool
     """
 
-    rows = len(matrix)
-    column = len(matrix[0])
+    # rows = len(matrix)
+    # column = len(matrix[0])
 
-    top = 0
-    bottom = row - 1
+    # top = 0
+    # bottom = row - 1
 
-    while top <= bottom:
-        row = (top+bottom) //2
-        if target > matrix[row][-1]:
-            top = row + 1
-        elif target < matrix[row][0]:
-            bottom = row - 1
-        else:
-            break
-    if not (top <= bottom):
-        return False 
+    # while top <= bottom:
+    #     row = (top+bottom) //2
+    #     if target > matrix[row][-1]:
+    #         top = row + 1
+    #     elif target < matrix[row][0]:
+    #         bottom = row - 1
+    #     else:
+    #         break
+    # if not (top <= bottom):
+    #     return False 
     
-    row = (top+bottom) //2
-    left = 0
-    right = column - 1
+    # row = (top+bottom) //2
+    # left = 0
+    # right = column - 1
 
-    while left <= right:
-        mid = (right + left) //2
-        if matrix[row][mid] == target:
-            return True
-        elif matrix[row][mid] > target:
-            right = mid - 1
-        else:
-            left = mid + 1
-    return False
+    # while left <= right:
+    #     mid = (right + left) //2
+    #     if matrix[row][mid] == target:
+    #         return True
+    #     elif matrix[row][mid] > target:
+    #         right = mid - 1
+    #     else:
+    #         left = mid + 1
+    # return False
     
