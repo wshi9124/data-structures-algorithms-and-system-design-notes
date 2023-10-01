@@ -27,22 +27,38 @@ def findMin(self, nums):
     :type nums: List[int]
     :rtype: int
     """
-    left = 0
-    right= len(nums) - 1
-    result = nums[0]
+    # left = 0
+    # right= len(nums) - 1
+    # result = nums[0]
 
-    while left <= right:
-        if nums[left] <= nums[right]:
-            result = min(result, nums[left])
-            break
+    # while left <= right:
+    #     if nums[left] <= nums[right]:
+    #         result = min(result, nums[left])
+    #         break
         
-        m = (right + left) // 2
-        result = min(result, nums[m])
-        if nums[m] >= nums[left]:
-            left = m + 1
-        else:
-            right = m - 1
+    #     m = (right + left) // 2
+    #     result = min(result, nums[m])
+    #     if nums[m] >= nums[left]:
+    #         left = m + 1
+    #     else:
+    #         right = m - 1
 
-    return result
+    # return result
+
+    start, end = 0, len(nums) - 1
+    curr_min = float("inf")
+
+    while start <= end:
+        mid = (start + end) // 2
+        curr_min = min(curr_min, nums[mid])
+
+        if nums[mid] > nums[end]:
+            start = mid + 1
+        else:
+            end = mid - 1
+    
+    return curr_min
+
+
 
         
