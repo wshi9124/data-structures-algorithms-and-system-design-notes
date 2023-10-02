@@ -22,18 +22,36 @@ def minEatingSpeed(self, piles, h):
     :type h: int
     :rtype: int
     """
-    left = 1
-    right = max(piles)
+    # left = 1
+    # right = max(piles)
+    # result = max(piles)
+
+    # while left <= right:
+    #     k = (left + right) //2
+    #     hours = 0
+    #     for p in piles:
+    #         hours += math.ceil(float(p)/k)
+    #     if hours <= h:
+    #         result = min(result, k)
+    #         right = k - 1
+    #     else:
+    #         left = k + 1
+    # return result
+
+    l, r = 1, max(piles)
+
     result = max(piles)
 
-    while left <= right:
-        k = (left + right) //2
-        hours = 0
+    while l <= r:
+        k = (l + r) // 2
+        total_hours = 0
         for p in piles:
-            hours += math.ceil(float(p)/k)
-        if hours <= h:
+            total_hours += math.ceil(p/k)
+        if total_hours <= h:
             result = min(result, k)
-            right = k - 1
+            r = k - 1
         else:
-            left = k + 1
+            l = k + 1
+    
     return result
+        
