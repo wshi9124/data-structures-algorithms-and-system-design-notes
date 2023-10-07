@@ -40,20 +40,31 @@ def maxProfitTwoPointers(prices):
     time complexity O(n)
     space complexity O(1)
     """
-    left = 0
-    right = 1
-    max_profit = 0
+#     left = 0
+#     right = 1
+#     max_profit = 0
 
-    while right < len(prices):
-        print(left)
-        if prices[left] < prices[right]:
-            profit = prices[right] - prices[left]
-            if profit > max_profit:
-                max_profit = profit
+#     while right < len(prices):
+#         print(left)
+#         if prices[left] < prices[right]:
+#             profit = prices[right] - prices[left]
+#             if profit > max_profit:
+#                 max_profit = profit
+#         else:
+#             left = right
+#         right += 1
+#     return max_profit
+
+# prices= [7,2,1,5,6,4]
+# print(maxProfitTwoPointers(prices))
+
+    l, r = 0, 1
+    profit = 0
+
+    while r < len(prices):
+        if prices[l] < prices[r]:
+            profit = max(profit, (prices[r] - prices[l]))
         else:
-            left = right
-        right += 1
-    return max_profit
-
-prices= [7,2,1,5,6,4]
-print(maxProfitTwoPointers(prices))
+            l = r
+        r += 1
+    return profit
