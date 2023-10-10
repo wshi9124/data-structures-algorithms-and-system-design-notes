@@ -57,7 +57,3 @@ def reverseListRecursive(self,head):
         head.next.next = head
     head.next = None 
     return newHead
-
-
-
-         
