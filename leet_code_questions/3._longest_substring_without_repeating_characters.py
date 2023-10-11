@@ -26,16 +26,29 @@ def lengthOfLongestSubstring(self, s):
     Space ccomplexity O(n)
     We use 2 ppinters to solve the question
     """
-    new_set = set()
-    left = 0 
+    # new_set = set()
+    # left = 0 
+    # result = 0
+
+    # for right in range(len(s)):
+    #     while s[right] in new_set:
+    #         new_set.remove(s[left])
+    #         left += 1
+    #     new_set.add(s[right])
+    #     result = max(result, right - left + 1)
+    # return result
+
+    charSet = set()
+
+    l = 0
     result = 0
 
-    for right in range(len(s)):
-        while s[right] in new_set:
-            new_set.remove(s[left])
-            left += 1
-        new_set.add(s[right])
-        result = max(result, right - left + 1)
+    for r in range(len(s)):
+        while s[r] in charSet:
+            charSet.remove(s[l])
+            l += 1
+        charSet.add(s[r])
+        result = max(result, r - l + 1)
     return result
     
     
