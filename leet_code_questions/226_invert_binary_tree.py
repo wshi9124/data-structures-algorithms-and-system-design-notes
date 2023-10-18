@@ -20,7 +20,7 @@ def invertTree(self, root):
     :rtype: TreeNode
     """
     if not root:
-        return None
+        return root
     
     temp = root.left
     root.left = root.right
