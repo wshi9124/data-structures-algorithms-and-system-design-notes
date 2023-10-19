@@ -20,11 +20,12 @@ def removeNthFromEnd(self, head, n):
     :type n: int
     :rtype: ListNode
     """
+    # we dont care what the first node is so we set it to zero, but next node has to be head
     dummy = ListNode(0, head)
     left = dummy
     right = head
 
-    while n >0:
+    while n:
         right = right.next
         n -= 1
     
@@ -33,7 +34,7 @@ def removeNthFromEnd(self, head, n):
         right = right.next
     
     #delete node
-
     left.next = left.next.next
 
     return dummy.next
+    
