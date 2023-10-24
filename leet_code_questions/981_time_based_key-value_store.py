@@ -33,7 +33,6 @@ At most 2 * 105 calls will be made to set and get.
 """
 
 def __init__(self):
-    #key = string 
     #value = list of [value, timestamp]
     self.keyStore = {}
 
