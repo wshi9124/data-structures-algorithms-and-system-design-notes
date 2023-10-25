@@ -26,14 +26,15 @@ def hasCycle(head):
     :type head: ListNode
     :rtype: bool
     """
-    turtle = head
-    hare = head
+    slow, fast = head, head
 
-    while hare and hare.next:
-        turtle = turtle.next
-        hare = hare.next.next 
-        if turtle == hare:
-            return True 
-    return False 
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        
+        if slow == fast:
+            return True
+    
+    return False
 
     
