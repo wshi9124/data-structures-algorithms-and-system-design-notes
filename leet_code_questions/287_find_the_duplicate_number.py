@@ -17,16 +17,22 @@ def findDuplicate(self, nums):
     :rtype: int
     need to know floyd algorithm 
     """
-    slow, fast = 0,0
+    #floyed algorithm
+
+    slow, fast = 0, 0 
+
     while True:
         slow = nums[slow]
+        # advances fast twice
         fast = nums[nums[fast]]
         if slow == fast:
             break
     
     slow2 = 0
+
     while True:
         slow = nums[slow]
         slow2 = nums[slow2]
         if slow == slow2:
-            return slow
+            break
+    return slow
