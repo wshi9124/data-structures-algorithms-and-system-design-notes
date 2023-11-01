@@ -22,33 +22,33 @@ Since the largest window of s only has one 'a', return empty string.
 """
 
 def minWindow(self, s, t):
-    # if t == "": return t
+    if t == "": return t
 
-    # countT, window = {}, {}
+    countT, window = {}, {}
 
-    # for c in t:
-    #     countT[c] = 1 + countT.get(c, 0)
+    for c in t:
+        countT[c] = 1 + countT.get(c, 0)
 
-    # l = 0
-    # have, need = 0, len(countT)
-    # result, resultLen = [-1,-1], float("infinity")
+    l = 0
+    have, need = 0, len(countT)
+    result, resultLen = [-1,-1], float("infinity")
 
-    # for r in range(len(s)):
-    #     c = s[r]
-    #     window[c] = 1 + window.get(c, 0)
+    for r in range(len(s)):
+        c = s[r]
+        window[c] = 1 + window.get(c, 0)
 
-    #     if c in countT and window[c] == countT[c]:
-    #         have += 1
+        if c in countT and window[c] == countT[c]:
+            have += 1
         
-    #     while have == need:
-    #         if (r - l + 1) < resultLen:
-    #             result = [l,r]
-    #             resultLen = (r- l + 1)
-    #         #popLeft
-    #         window[s[l]] -= 1
-    #         if s[l] in countT and window[s[l]] < countT[s[l]]:
-    #             have -= 1
-    #         l += 1
+        while have == need:
+            if (r - l + 1) < resultLen:
+                result = [l,r]
+                resultLen = (r- l + 1)
+            #popLeft
+            window[s[l]] -= 1
+            if s[l] in countT and window[s[l]] < countT[s[l]]:
+                have -= 1
+            l += 1
     
-    # leftP, rightP = result
-    # return s[leftP: rightP + 1] if resultLen != float("infinity") else ""
+    leftP, rightP = result
+    return s[leftP: rightP + 1] if resultLen != float("infinity") else ""
