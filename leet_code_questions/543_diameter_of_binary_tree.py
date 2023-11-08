@@ -29,3 +29,18 @@ def diameterOfBinaryTree(self, root):
     
     # dfs(root)
     # return result[0]
+
+    result = 0
+
+    def dfs(root):
+        # nonlocal keyword is used to work with variables inside nested functions, where the variable should not belong to the inner function
+        nonlocal result
+
+        if not root:
+            return 0
+        left = dfs(root.left)
+        right = dfs(root.right)
+        result = max(result, left + right)
+        return 1 + max(left, right)
+    dfs(root)
+    return result
