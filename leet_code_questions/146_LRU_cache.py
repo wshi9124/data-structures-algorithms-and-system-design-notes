@@ -42,10 +42,12 @@ class LRUCache:
         #connect nodes with each other 
         self.left.next, self.right.prev = self.right, self.left
     
+    # remove from list
     def remove(self, node):
         prev, nxt = node.prev, node.next
         prev.next, nxt.prev = nxt, prev
 
+    # insert node to right
     def insert(self, node):
         prev, nxt = self.right.prev, self.right
         prev.next, nxt.prev = node
