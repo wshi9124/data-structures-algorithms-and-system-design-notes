@@ -13,28 +13,31 @@ Output: [3,2,1,4,5]
 """
 
 def reverseKGroup(self, head, k):
+    # default value is 0 and next pointer is head
     dummy = ListNode(0, head)
-    groupPrev = dummy 
+    # save one node before group
+    groupPrev = dummy
+
     while True:
-        kth = self.getKth(groupPrev, k)
+        kth = self.findKth(groupPrev, k)
         if not kth:
             break
+        # save one node after the group
         groupNext = kth.next
-        #reverse groups
+        # reverse group
         prev, curr = kth.next, groupPrev.next
         while curr != groupNext:
-            tmp = curr.next
+            temp = curr.next
             curr.next = prev
             prev = curr
-            curr = tmp
+            curr = temp
         #becasue kth is the last node in our group we now want it to be the first node in our group
         temp = groupPrev.next
         groupPrev.next = kth
         groupPrev = temp
     return dummy.next
-    
 
-def getKth(self, curr, k):
+def findKth(self, curr, k):
     while curr and k > 0:
         curr = curr.next
         k -= 1
