@@ -18,16 +18,31 @@ def isSubtree(self, root, subRoot):
     :type subRoot: TreeNode
     :rtype: bool
     """
-    if not subRoot:
-        return True
-    if not root:
-        return False
+#     if not subRoot:
+#         return True
+#     if not root:
+#         return False
     
+#     if self.isSameTree(root, subRoot):
+#         return True
+#     return self.isSubtree(root.right, subRoot) or self.isSubtree(root.left, subRoot)
+    
+    
+# def isSameTree(self, root, subRoot):
+#     if not root and not subRoot:
+#         return True
+#     if root and subRoot and root.val == subRoot.val:
+#         return self.isSameTree(root.left, subRoot.left) and self.isSameTree(root.right, subRoot.right)
+#     return False
+
+    if not subRoot: return True
+    if not root: return False
+
     if self.isSameTree(root, subRoot):
         return True
     return self.isSubtree(root.right, subRoot) or self.isSubtree(root.left, subRoot)
-    
-    
+
+
 def isSameTree(self, root, subRoot):
     if not root and not subRoot:
         return True
