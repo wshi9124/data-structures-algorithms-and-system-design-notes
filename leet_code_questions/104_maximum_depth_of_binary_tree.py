@@ -12,34 +12,33 @@ Input: root = [1,null,2]
 Output: 2
 """
 
-def maxDepthRecursive(self, root):
-    """
-    :type root: TreeNode
-    :rtype: int
-    Recursive DFS
-    """
+def maxDepth(self, root) -> int:
+    # Recursive DFS
     if not root:
-        return None
+        return 0
     
-    left = maxDepthRecursive(root.left)
-    right = maxDepthRecursive(root.right)
+    return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
 
-    return 1 + max(left,right)
+    # Iterative DFS
+    stack = [[root,1]]
+    result = 0
 
+    while stack: 
+        node, depth = stack.pop()
 
-def maxDepthBFS(self, root):
-    """
-    :type root: TreeNode
-    :rtype: int
-    BFS
-    """
-    q = collections.deque()
+        if node:
+            result = max(result, depth)
+            stack.append([node.left, depth + 1])
+            stack.append([node.right, depth + 1])
+        return result
 
+    # Iterative BFS
+    q = deque()
     if root:
         q.append(root)
     
     level = 0
-
+    
     while q:
         for i in range(len(q)):
             node = q.popleft()
@@ -49,23 +48,10 @@ def maxDepthBFS(self, root):
                 q.append(node.right)
         level += 1
     return level
+            
 
-def maxDepthIterative(self, root):
-    """
-    :type root: TreeNode
-    :rtype: int
-    iterative DFS
-    """
-    stack = [[root, 1]]
-    result = 0
 
-    while stack:
-        node, depth = stack.pop()
-        if node:
-            result = max(result, depth)
-            stack.append([node.left, depth +1])
-            stack.append([node.right, depth +1])
-    return result
+
 
 
 
