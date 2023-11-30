@@ -21,12 +21,12 @@ def levelOrder(self, root):
     Time complexity : O(n)
     Space complexity O(n)
     """
-    result = []
+    res = []
     q = collections.deque()
 
     if root:
         q.append(root)
-    
+
     while q:
         val = []
         for i in range(len(q)):
@@ -36,6 +36,7 @@ def levelOrder(self, root):
                 q.append(node.left)
             if node.right:
                 q.append(node.right)
-        result.append(val)
-    return result
+        res.append(val)
+    return res
+
         

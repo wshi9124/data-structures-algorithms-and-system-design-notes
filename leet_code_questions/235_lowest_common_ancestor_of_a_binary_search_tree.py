@@ -28,12 +28,13 @@ def lowestCommonAncestor(self, root, p, q):
     Time complexity= O(log n)
     Space complexity= O(1) 
     """
-    curr = root
+    cur = root
 
-    while curr:
-        if p.val > curr.val and q.val > curr.val:
-            curr = curr.right
-        elif p.val < curr.val and q.val < curr.val:
-            curr = curr.left
+    while cur:
+        if p.val > cur.val and q.val > cur.val:
+            cur = cur.right
+        elif p.val < cur.val and q.val < cur.val:
+            cur = cur.left
         else:
-            return curr
+            return cur
+
