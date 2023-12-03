@@ -15,12 +15,12 @@ Output: []
 """
 
 def rightSideView(self, root):
-    result = []
+    res = []
     q = collections.deque()
 
     if root:
         q.append(root)
-    
+
     while q:
         rightNode = None
         for i in range(len(q)):
@@ -30,5 +30,5 @@ def rightSideView(self, root):
                 q.append(node.left)
             if node.right:
                 q.append(node.right)
-        result.append(rightNode.val)
-    return result
+        res.append(node.val)
+    return res
