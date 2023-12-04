@@ -23,15 +23,13 @@ Explanation: Root is considered as good.
 """
 
 def goodNodes(self, root):
-    def dfs(node, maxVal):
+    def dfs(node, maxNode):
         if not node:
             return 0
-        
-        result = 1 if node.val >= maxVal else 0
-        maxVal = max(maxVal, node.val)
-        result += dfs(node.left, maxVal)
-        result += dfs(node.right, maxVal)
 
+        maxNode = max(maxNode, node.val)
+        result = 1 if node.val >= maxNode else 0
+        result += dfs(node.left, maxNode)
+        result += dfs(node.right, maxNode)
         return result
-    
     return dfs(root, root.val)
