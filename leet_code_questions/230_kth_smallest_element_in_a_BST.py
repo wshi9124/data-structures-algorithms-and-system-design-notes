@@ -15,15 +15,16 @@ def kthSmallest(self, root, k):
     stack = []
     curr = root
 
-    while curr or stack:
+    while stack or curr:
         while curr:
-            stack.append(curr.left)
+            stack.append(curr)
             curr = curr.left
         curr = stack.pop()
         k -= 1
         if k == 0:
             return curr.val
-        curr= curr.right
+        curr = curr.right
+                
         
     # #DFS
     # a = []
