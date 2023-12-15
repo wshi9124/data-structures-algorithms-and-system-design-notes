@@ -17,16 +17,18 @@ def serialize(self, root):
     :type root: TreeNode
     :rtype: str
     """
-    result = []
+    res = []
+
     def dfs(node):
         if not node:
-            result.append("N")
+            res.append("N")
             return
-        result.append(str(node.val))
+        res.append(str(node.val))
         dfs(node.left)
         dfs(node.right)
+
     dfs(root)
-    return ",".join(result)
+    return ",".join(res)
 
 def deserialize(self, data):
     """Decodes your encoded data to tree.
@@ -36,6 +38,7 @@ def deserialize(self, data):
     """
     vals = data.split(",")
     self.i = 0
+
     def dfs():
         if vals[self.i] == "N":
             self.i += 1
@@ -45,7 +48,9 @@ def deserialize(self, data):
         node.left = dfs()
         node.right = dfs()
         return node
-    return dfs()
     
+    return dfs()
 
+
+ 
 
