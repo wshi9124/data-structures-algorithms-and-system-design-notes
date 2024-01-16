@@ -26,9 +26,7 @@ def permute(self, nums):
     
     for i in range(len(nums)):
         n = nums.pop(0)
-
         perms = self.permute(nums)
-
         #[2,3,1] [3,2,1] we are appending the number we pop into the perm
         for perm in perms:
             perm.append(n)
